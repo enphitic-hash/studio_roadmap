@@ -2,10 +2,10 @@
   "custom": {},
   "tasks": {
     "design/export-the-logo-set": {
-      "at": 1792692517767,
-      "by": "Victor",
-      "done": true,
-      "updated": 1792692517767
+      "at": null,
+      "by": null,
+      "done": false,
+      "updated": 1792692526182
     },
     "design/final-production-values-for-sandstone-and-noir-earth": {
       "at": 1792692518883,
@@ -14,10 +14,10 @@
       "updated": 1792692518883
     },
     "design/lockup-spacing-and-minimum-sizes": {
-      "at": 1792692517066,
-      "by": "Victor",
-      "done": true,
-      "updated": 1792692517066
+      "at": null,
+      "by": null,
+      "done": false,
+      "updated": 1792692525750
     },
     "design/neutral-ramp-of-8-to-10-steps": {
       "at": 1792692519364,
@@ -26,16 +26,16 @@
       "updated": 1792692519364
     },
     "design/tune-the-e-for-16px-favicon-size": {
-      "at": 1792692515516,
-      "by": "Victor",
-      "done": true,
-      "updated": 1792692515516
+      "at": null,
+      "by": null,
+      "done": false,
+      "updated": 1792692525283
     },
     "design/vector-refinement-of-the-e-mark": {
-      "at": 1792692513847,
-      "by": "Victor",
-      "done": true,
-      "updated": 1792692513847
+      "at": null,
+      "by": null,
+      "done": false,
+      "updated": 1792692524751
     }
   },
   "version": 2
