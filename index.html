@@ -1,0 +1,1214 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>ENPHITIC Studio Roadmap</title>
+<meta name="apple-mobile-web-app-capable" content="yes">
+<meta name="mobile-web-app-capable" content="yes">
+<meta name="apple-mobile-web-app-title" content="Roadmap">
+<meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+<meta name="theme-color" content="#F7F3EA" media="(prefers-color-scheme: light)">
+<meta name="theme-color" content="#1A1916" media="(prefers-color-scheme: dark)">
+<link rel="apple-touch-icon" href="apple-touch-icon.png">
+<link rel="icon" type="image/png" sizes="32x32" href="favicon-32.png">
+<link rel="manifest" href="manifest.webmanifest">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Schibsted+Grotesk:wght@400;500;600;700&display=swap" rel="stylesheet">
+<style>
+:root{
+  --bg:#F7F3EA; --surface:#FCFAF4; --ink:#1A1916; --ink-2:#47433B; --muted:#7A7468;
+  --line:rgba(26,25,22,.12); --line-strong:rgba(26,25,22,.26); --hover:rgba(26,25,22,.045);
+  --fill:#1A1916; --on-fill:#F7F3EA; --danger:#9B2C1F; --scrim:rgba(26,25,22,.45);
+  --r-input:4px; --r-btn:8px; --r-panel:12px; --r-modal:16px;
+  --font:"Schibsted Grotesk", ui-sans-serif, system-ui, -apple-system, "Segoe UI", Roboto, sans-serif;
+  --top-h:60px; --tab-h:0px;
+  color-scheme:light;
+}
+:root[data-theme="dark"]{
+  --bg:#1A1916; --surface:#22201C; --ink:#F2EDE2; --ink-2:#CFC8BA; --muted:#978F81;
+  --line:rgba(247,243,234,.12); --line-strong:rgba(247,243,234,.28); --hover:rgba(247,243,234,.06);
+  --fill:#F7F3EA; --on-fill:#1A1916; --danger:#E5877A; --scrim:rgba(0,0,0,.55); color-scheme:dark;
+}
+@media (prefers-color-scheme:dark){
+  :root:not([data-theme="light"]){
+    --bg:#1A1916; --surface:#22201C; --ink:#F2EDE2; --ink-2:#CFC8BA; --muted:#978F81;
+    --line:rgba(247,243,234,.12); --line-strong:rgba(247,243,234,.28); --hover:rgba(247,243,234,.06);
+    --fill:#F7F3EA; --on-fill:#1A1916; --danger:#E5877A; --scrim:rgba(0,0,0,.55); color-scheme:dark;
+  }
+}
+*{box-sizing:border-box}
+html{-webkit-text-size-adjust:100%;scroll-padding-top:calc(var(--top-h) + 12px)}
+body{margin:0;background:var(--bg);color:var(--ink);font-family:var(--font);font-size:15px;line-height:1.5;
+  font-feature-settings:"tnum" 1;-webkit-tap-highlight-color:transparent;overscroll-behavior-y:none}
+button,input,textarea,select{font:inherit;color:inherit}
+a{color:inherit}
+:focus-visible{outline:2px solid var(--ink);outline-offset:2px;border-radius:4px}
+.sr{position:absolute;width:1px;height:1px;overflow:hidden;clip:rect(0 0 0 0);white-space:nowrap}
+
+/* ---------- Top bar ---------- */
+.top{position:sticky;top:0;z-index:30;display:flex;align-items:center;gap:14px;
+  padding:calc(10px + env(safe-area-inset-top,0px)) 24px 10px;
+  background:color-mix(in srgb,var(--bg) 90%,transparent);backdrop-filter:blur(14px);-webkit-backdrop-filter:blur(14px);
+  border-bottom:1px solid var(--line)}
+.brand{display:flex;align-items:center;gap:10px;text-decoration:none;font-weight:600;letter-spacing:.02em;min-width:0}
+.brand svg{width:26px;height:26px;flex:none}
+.brand small{font-weight:400;color:var(--muted);letter-spacing:0}
+.top .spacer{flex:1}
+.status{font-size:13px;color:var(--muted);white-space:nowrap;display:flex;align-items:center;gap:8px;background:none;border:0;padding:0;cursor:pointer}
+.status i{width:8px;height:8px;border-radius:50%;background:var(--line-strong);flex:none}
+.status[data-kind="synced"] i{background:var(--ink)}
+.status[data-kind="pending"] i{background:var(--muted)}
+.status[data-kind="error"]{color:var(--danger)} .status[data-kind="error"] i{background:var(--danger)}
+.seg{display:inline-flex;border:1px solid var(--line-strong);border-radius:999px;padding:2px;flex:none}
+.seg button{border:0;background:none;padding:5px 14px;border-radius:999px;cursor:pointer;color:var(--ink-2);min-height:30px}
+.seg button[aria-pressed="true"]{background:var(--fill);color:var(--on-fill)}
+.btn{border:1px solid var(--line-strong);background:none;border-radius:var(--r-btn);min-height:38px;padding:0 14px;cursor:pointer;font-weight:500;
+  display:inline-flex;align-items:center;justify-content:center;gap:8px;text-decoration:none}
+.btn:hover{background:var(--hover)}
+.btn.primary{background:var(--fill);color:var(--on-fill);border-color:var(--fill)}
+.btn.primary:hover{opacity:.9}
+.me{display:none}
+
+/* ---------- Layout ---------- */
+.layout{display:grid;grid-template-columns:288px minmax(0,1fr);max-width:1240px;margin:0 auto}
+.side{border-right:1px solid var(--line);padding:18px 14px 40px;position:sticky;top:var(--top-h);height:calc(100vh - var(--top-h));overflow:auto}
+.side .search{width:100%;border:1px solid var(--line-strong);background:var(--surface);border-radius:var(--r-input);padding:8px 10px;margin-bottom:14px}
+.side .home{display:flex;justify-content:space-between;padding:8px 10px;border-radius:var(--r-btn);text-decoration:none;font-weight:500}
+.side .home:hover,.navlist a:hover{background:var(--hover)}
+.side .home[aria-current="page"],.navlist a[aria-current="page"]{background:var(--hover)}
+.group-title{font-size:13px;color:var(--muted);margin:18px 10px 4px;display:flex;justify-content:space-between}
+.navlist{list-style:none;margin:0;padding:0}
+.navlist a{display:grid;grid-template-columns:24px minmax(0,1fr) auto;gap:6px;align-items:center;padding:7px 10px;border-radius:var(--r-btn);text-decoration:none;color:var(--ink-2);font-size:14px}
+.navlist a[aria-current="page"]{color:var(--ink);font-weight:500}
+.navlist .n{color:var(--muted);font-size:12px}
+.navlist .t{white-space:nowrap;overflow:hidden;text-overflow:ellipsis}
+.navlist .c{color:var(--muted);font-size:12px}
+.ring{width:16px;height:16px;flex:none}
+.ring circle{fill:none;stroke-width:3}
+.ring .bg{stroke:var(--line)} .ring .fg{stroke:var(--ink);stroke-linecap:round;transform:rotate(-90deg);transform-origin:50% 50%}
+main{padding:32px 40px 80px;min-width:0}
+
+/* ---------- Shared content ---------- */
+h1.page{font-size:34px;line-height:1.1;letter-spacing:-.02em;font-weight:600;margin:0 0 6px}
+h2{font-size:19px;font-weight:600;letter-spacing:-.01em;margin:36px 0 10px}
+.lede{color:var(--ink-2);max-width:64ch;margin:0}
+.muted{color:var(--muted)}
+.bar{height:4px;background:var(--line);border-radius:4px;overflow:hidden}
+.bar i{display:block;height:100%;background:var(--ink);transition:width .32s ease}
+.empty{padding:24px 4px;color:var(--muted)}
+
+/* Overview */
+.hero{display:grid;grid-template-columns:180px 1fr;gap:36px;align-items:center;padding-bottom:28px;border-bottom:1px solid var(--line)}
+.mark{width:180px;height:180px;display:block}
+.mark .ghost{fill:none;stroke:var(--line-strong);stroke-width:2}
+.mark .solid{fill:var(--ink)}
+.hero h1{font-size:42px;line-height:1.05;letter-spacing:-.02em;font-weight:600;margin:0 0 8px}
+.hero p{margin:0 0 18px;color:var(--ink-2);max-width:54ch}
+.people{display:flex;gap:28px;flex-wrap:wrap}
+.person{display:flex;align-items:center;gap:10px}
+.person b{font-size:22px;font-weight:600;line-height:1}
+.person span.l{color:var(--muted);font-size:13px}
+.current{display:flex;align-items:center;gap:16px;margin-top:24px;padding:16px;border:1px solid var(--line-strong);border-radius:var(--r-panel);text-decoration:none}
+.current:hover{background:var(--hover)}
+.current .big{font-size:30px;font-weight:600;color:var(--muted);line-height:1;min-width:36px}
+.current .t{font-weight:600}
+.current .s{font-size:13px;color:var(--muted)}
+.current .go{margin-left:auto;font-weight:500;white-space:nowrap}
+
+/* Phases list (overview + phases view) */
+.glist{list-style:none;margin:0;padding:0;border-top:1px solid var(--line)}
+.glist a{display:grid;grid-template-columns:36px minmax(0,1fr) 140px 52px;gap:14px;align-items:center;padding:13px 4px;border-bottom:1px solid var(--line);text-decoration:none;min-height:56px}
+.glist a:hover{background:var(--hover)}
+.glist .num{font-size:20px;font-weight:600;color:var(--muted)}
+.glist .t{font-weight:500;display:block}
+.glist .l{display:block;font-size:13px;color:var(--muted)}
+.glist .c{text-align:right;color:var(--muted);font-size:13px}
+.ghead{display:flex;justify-content:space-between;align-items:baseline;margin:32px 0 8px}
+.ghead h2{margin:0}
+
+/* Phase page */
+.phead{padding-bottom:20px;border-bottom:1px solid var(--line)}
+.phead .row{display:flex;gap:18px;align-items:flex-start}
+.phead .bignum{font-size:60px;line-height:.9;font-weight:600;letter-spacing:-.03em;color:var(--muted)}
+.phead .meta{color:var(--muted);font-size:14px;margin-top:10px}
+.phead .bar{max-width:420px;margin-top:12px;height:6px}
+.chips{display:flex;gap:8px;overflow-x:auto;padding:16px 0 4px;scrollbar-width:none;-webkit-overflow-scrolling:touch}
+.chips::-webkit-scrollbar{display:none}
+.chip{flex:none;border:1px solid var(--line-strong);background:none;border-radius:999px;padding:6px 12px;font-size:13px;cursor:pointer;white-space:nowrap;text-decoration:none;color:var(--ink-2)}
+.chip:hover{background:var(--hover)}
+.chip.done{color:var(--muted);text-decoration:line-through}
+.tools{display:flex;gap:12px;align-items:center;margin-top:14px;flex-wrap:wrap}
+h3.sec{font-size:15px;font-weight:600;margin:30px 0 6px;display:flex;justify-content:space-between;align-items:baseline;gap:12px}
+h3.sec span{color:var(--muted);font-weight:400;font-size:13px}
+.pager{display:grid;grid-template-columns:1fr 1fr;gap:12px;margin-top:36px}
+.pager a{border:1px solid var(--line-strong);border-radius:var(--r-panel);padding:14px 16px;text-decoration:none;min-height:64px}
+.pager a:hover{background:var(--hover)}
+.pager .k{display:block;font-size:13px;color:var(--muted)}
+.pager .t{font-weight:500}
+.pager .next{text-align:right;grid-column:2}
+
+/* Tasks */
+.tasks{list-style:none;margin:0;padding:0;border-top:1px solid var(--line)}
+.task{display:grid;grid-template-columns:30px minmax(0,1fr) 28px;gap:12px;padding:13px 4px;border-bottom:1px solid var(--line);align-items:start}
+.check{position:relative;width:22px;height:22px;margin-top:0;cursor:pointer}
+.check input{position:absolute;inset:-10px;width:42px;height:42px;opacity:0;margin:0;cursor:pointer}
+.check .box{position:absolute;inset:0;pointer-events:none;border:1.5px solid var(--line-strong);border-radius:5px;background:var(--surface);transition:background .12s ease,border-color .12s ease}
+.check input:checked + .box{background:var(--fill);border-color:var(--fill)}
+.check input:checked + .box::after{content:"";position:absolute;left:6.5px;top:2.5px;width:5px;height:11px;border:solid var(--on-fill);border-width:0 2px 2px 0;transform:rotate(45deg)}
+.check input:focus-visible + .box{outline:2px solid var(--ink);outline-offset:2px}
+.ttl{cursor:pointer;font-weight:500;display:block}
+.is-done .ttl{color:var(--muted);text-decoration:line-through;text-decoration-color:var(--line-strong)}
+.hint{display:block;color:var(--muted);font-size:13.5px;margin-top:2px;max-width:72ch}
+.tmeta{display:flex;gap:14px;flex-wrap:wrap;font-size:13px;color:var(--muted);margin-top:6px;align-items:center}
+.link{border:0;background:none;padding:2px 0;color:var(--ink-2);text-decoration:underline;text-decoration-color:var(--line-strong);text-underline-offset:3px;cursor:pointer;font-size:13px}
+.link:hover{color:var(--ink)}
+.link.danger{color:var(--danger)}
+.note{margin-top:8px;padding:8px 12px;border-left:2px solid var(--line-strong);color:var(--ink-2);font-size:14px;white-space:pre-wrap}
+.noteedit textarea{width:100%;min-height:80px;border:1px solid var(--line-strong);border-radius:var(--r-input);background:var(--surface);padding:8px 10px;margin-top:8px;resize:vertical}
+.noteedit .row{display:flex;gap:8px;margin-top:8px}
+.where{font-size:12.5px;color:var(--muted)}
+.who{width:26px;height:26px;border-radius:50%;display:grid;place-items:center;font-size:12px;font-weight:600;flex:none}
+.who.t{background:var(--fill);color:var(--on-fill)}
+.who.v{border:1.5px solid var(--ink);color:var(--ink)}
+.addrow{display:flex;gap:8px;padding:10px 4px}
+.addrow input{flex:1;min-width:0;border:1px dashed var(--line-strong);background:none;border-radius:var(--r-input);padding:9px 10px}
+.addrow input:focus{border-style:solid;background:var(--surface)}
+.searchbox{width:100%;border:1px solid var(--line-strong);background:var(--surface);border-radius:var(--r-btn);padding:12px 14px;font-size:16px;margin:14px 0 6px}
+
+/* Tab bar (mobile) */
+.tabbar{display:none}
+
+/* Sheets */
+.backdrop{position:fixed;inset:0;background:var(--scrim);display:none;align-items:center;justify-content:center;padding:20px;z-index:60}
+.backdrop.open{display:flex}
+.sheet{background:var(--bg);border:1px solid var(--line-strong);border-radius:var(--r-modal);width:min(560px,100%);max-height:88vh;overflow:auto;padding:26px}
+.sheet h2{margin:0 0 6px}
+.sheet p{color:var(--ink-2);margin:0 0 14px}
+.sheet h3{font-size:15px;margin:22px 0 8px}
+.field{display:block;margin-bottom:14px}
+.field span{display:block;font-size:13px;font-weight:500;margin-bottom:4px}
+.field input{width:100%;border:1px solid var(--line-strong);background:var(--surface);border-radius:var(--r-input);padding:10px}
+.field small{display:block;color:var(--muted);font-size:12.5px;margin-top:4px}
+.mrow{display:flex;gap:10px;flex-wrap:wrap;margin-top:14px}
+.who-pick{display:grid;grid-template-columns:1fr 1fr;gap:12px;margin-top:8px}
+.who-pick button{border:1px solid var(--line-strong);background:var(--surface);border-radius:var(--r-panel);padding:22px;cursor:pointer;font-size:18px;font-weight:600;display:flex;align-items:center;gap:12px}
+.who-pick button:hover{border-color:var(--ink)}
+.sep{border:0;border-top:1px solid var(--line);margin:22px 0}
+.msg{font-size:13px;color:var(--muted);min-height:18px;margin-top:8px}
+.msg.err{color:var(--danger)}
+.grab{display:none}
+
+/* ---------- Mobile ---------- */
+@media (max-width:900px){
+  :root{--tab-h:calc(58px + env(safe-area-inset-bottom,0px))}
+  body{font-size:16px}
+  .top{padding:calc(8px + env(safe-area-inset-top,0px)) 16px 8px;gap:10px}
+  .brand small{display:none}
+  .top .seg,.top .settings-btn{display:none}
+  .status span{display:none}
+  .me{display:inline-flex;border:0;background:none;padding:4px;cursor:pointer}
+  .layout{grid-template-columns:1fr}
+  .side{display:none}
+  main{padding:20px 16px calc(var(--tab-h) + 28px)}
+  h1.page{font-size:28px}
+  .hero{grid-template-columns:96px 1fr;gap:18px;padding-bottom:20px}
+  .mark{width:96px;height:96px}
+  .hero h1{font-size:28px}
+  .hero p{display:none}
+  .people{gap:18px;margin-top:6px}
+  .glist a{grid-template-columns:30px minmax(0,1fr) 46px}
+  .glist .bar{display:none}
+  .glist .c{grid-column:3}
+  .phead{position:sticky;top:var(--top-h);z-index:10;background:var(--bg);margin:-20px -16px 0;padding:14px 16px 0;border-bottom:1px solid var(--line)}
+  .phead .row{gap:12px;align-items:center}
+  .phead .bignum{font-size:34px}
+  .phead h1.page{font-size:22px;margin:0}
+  .phead .lede,.phead .meta{display:none}
+  .phead .bar{margin-top:10px;max-width:none;height:4px}
+  .phead .chips{padding:10px 0 12px}
+  .phead.compact .tools{display:none}
+  .intro-m{display:block;color:var(--ink-2);margin:16px 0 0;font-size:15px}
+  .task{grid-template-columns:34px minmax(0,1fr) 28px;padding:14px 2px;min-height:56px}
+  .check{width:24px;height:24px}
+  .check input:checked + .box::after{left:7.5px;top:3px}
+  .pager{grid-template-columns:1fr}
+  .pager .next{grid-column:1}
+  .tabbar{display:grid;grid-template-columns:repeat(4,1fr);position:fixed;left:0;right:0;bottom:0;z-index:40;
+    height:var(--tab-h);padding-bottom:env(safe-area-inset-bottom,0px);
+    background:color-mix(in srgb,var(--bg) 92%,transparent);backdrop-filter:blur(14px);-webkit-backdrop-filter:blur(14px);border-top:1px solid var(--line)}
+  .tabbar a,.tabbar button{display:flex;flex-direction:column;align-items:center;justify-content:center;gap:3px;text-decoration:none;color:var(--muted);font-size:11px;border:0;background:none;cursor:pointer}
+  .tabbar svg{width:22px;height:22px;fill:none;stroke:currentColor;stroke-width:1.6}
+  .tabbar [aria-current="page"]{color:var(--ink);font-weight:600}
+  .tabbar [aria-current="page"] svg{stroke-width:2.2}
+  .backdrop{align-items:flex-end;padding:0}
+  .sheet{width:100%;max-height:92vh;border-radius:var(--r-modal) var(--r-modal) 0 0;border-bottom:0;padding:10px 18px calc(24px + env(safe-area-inset-bottom,0px));animation:up .24s ease}
+  .grab{display:block;width:36px;height:5px;border-radius:5px;background:var(--line-strong);margin:0 auto 14px}
+  .field input,.addrow input,textarea{font-size:16px}
+}
+@media (min-width:901px){ .intro-m{display:none} }
+@keyframes up{from{transform:translateY(40px);opacity:.6}to{transform:none;opacity:1}}
+@media (prefers-reduced-motion:reduce){*{transition:none!important;animation:none!important}}
+</style>
+</head>
+<body>
+<header class="top" id="top">
+  <a class="brand" href="#overview" aria-label="ENPHITIC Studio Roadmap, overview">
+    <svg viewBox="0 0 256 256" aria-hidden="true"><polygon points="67,61 219,61 189,91 37,91" fill="currentColor"/><polygon points="40,113 159,113 159,143 70,143 70,165 219,165 189,195 70,195 40,165" fill="currentColor"/></svg>
+    <span>ENPHITIC <small>Studio roadmap</small></span>
+  </a>
+  <span class="spacer"></span>
+  <button class="status" id="status" type="button" data-kind="local" aria-live="polite"><i></i><span id="statusText">Saved on this device</span></button>
+  <div class="seg" role="group" aria-label="Who is using this browser">
+    <button type="button" data-person="Trevor" aria-pressed="false">Trevor</button>
+    <button type="button" data-person="Victor" aria-pressed="false">Victor</button>
+  </div>
+  <button class="btn settings-btn" type="button" data-open="settings">Settings</button>
+  <button class="me" type="button" data-open="settings" aria-label="Settings" id="meBtn"></button>
+</header>
+
+<div class="layout">
+  <nav class="side" id="side" aria-label="Phases"></nav>
+  <main id="main" tabindex="-1"></main>
+</div>
+
+<nav class="tabbar" id="tabbar" aria-label="Main">
+  <a href="#overview" data-tab="overview"><svg viewBox="0 0 24 24"><path d="M4 10.5 12 4l8 6.5V20h-5.5v-5h-5v5H4z"/></svg>Overview</a>
+  <a href="#phases" data-tab="phases"><svg viewBox="0 0 24 24"><path d="M8 6h12M8 12h12M8 18h12"/><circle cx="4" cy="6" r="1"/><circle cx="4" cy="12" r="1"/><circle cx="4" cy="18" r="1"/></svg>Phases</a>
+  <a href="#search" data-tab="search"><svg viewBox="0 0 24 24"><circle cx="11" cy="11" r="6.5"/><path d="m16 16 4.5 4.5"/></svg>Search</a>
+  <button type="button" data-open="settings" data-tab="settings"><svg viewBox="0 0 24 24"><path d="M4 7h10M18 7h2M4 17h2M10 17h10"/><circle cx="16" cy="7" r="2"/><circle cx="8" cy="17" r="2"/></svg>Settings</button>
+</nav>
+
+<div class="backdrop" id="whoModal" role="dialog" aria-modal="true" aria-labelledby="whoTitle">
+  <div class="sheet"><span class="grab"></span>
+    <h2 id="whoTitle">Who’s using this device?</h2>
+    <p>Steps you tick here will be marked as done by this person. You can change it later in Settings.</p>
+    <div class="who-pick">
+      <button type="button" data-pick="Trevor"><span class="who t">T</span>Trevor</button>
+      <button type="button" data-pick="Victor"><span class="who v">V</span>Victor</button>
+    </div>
+  </div>
+</div>
+
+<div class="backdrop" id="settingsModal" role="dialog" aria-modal="true" aria-labelledby="setTitle">
+  <div class="sheet"><span class="grab"></span>
+    <h2 id="setTitle">Settings</h2>
+    <h3>You are</h3>
+    <div class="seg" role="group" aria-label="Who is using this device">
+      <button type="button" data-person="Trevor" aria-pressed="false">Trevor</button>
+      <button type="button" data-person="Victor" aria-pressed="false">Victor</button>
+    </div>
+    <h3>Theme</h3>
+    <div class="seg" role="group" aria-label="Theme">
+      <button type="button" data-theme-pick="auto">Automatic</button>
+      <button type="button" data-theme-pick="light">Light</button>
+      <button type="button" data-theme-pick="dark">Dark</button>
+    </div>
+    <hr class="sep">
+    <h3 style="margin-top:0">Sync with GitHub</h3>
+    <p>Progress is saved in progress.json in the repository, so Trevor and Victor always see the same plan. Each of you enters your own token once per device.</p>
+    <label class="field"><span>Repository</span><input id="fRepo" placeholder="enphitic-hash/studio_roadmap" autocomplete="off" autocapitalize="off" spellcheck="false"></label>
+    <label class="field"><span>Branch</span><input id="fBranch" placeholder="main" autocomplete="off" autocapitalize="off" spellcheck="false"></label>
+    <label class="field"><span>File path</span><input id="fPath" placeholder="progress.json" autocomplete="off" autocapitalize="off" spellcheck="false"></label>
+    <label class="field"><span>Personal access token</span><input id="fToken" type="password" placeholder="github_pat_…" autocomplete="off"><small>Fine-grained token with access to this repository only, permission Contents: Read and write. It stays on this device and is never written to the repository.</small></label>
+    <div class="mrow">
+      <button class="btn primary" id="saveSettings" type="button">Save and sync</button>
+      <button class="btn" id="testSettings" type="button">Test connection</button>
+    </div>
+    <div class="msg" id="setMsg"></div>
+    <hr class="sep">
+    <h3 style="margin-top:0">Backup</h3>
+    <div class="mrow">
+      <button class="btn" id="exportBtn" type="button">Download backup</button>
+      <label class="btn">Restore from file<input id="importFile" type="file" accept="application/json" hidden></label>
+      <button class="btn" type="button" data-close>Done</button>
+    </div>
+  </div>
+</div>
+
+<script>
+/* =====================================================================
+   THE PLAN — ENPHITIC Studio, tech and development only.
+   Each step is "Title" or ["Title","Hint"]. Step IDs come from the title,
+   so you can reorder or add steps freely. Renaming a step resets its tick.
+   ===================================================================== */
+const GROUPS = [
+  {title:"Set up", ids:["design","accounts","foundation"]},
+  {title:"Build V1", ids:["ai-core","product","v1-testing","website"]},
+  {title:"Production-ready", ids:["hardening","analytics","trust","payments"]},
+  {title:"Mobile apps", ids:["mobile-prep","mobile","stores"]},
+  {title:"Launch and beyond", ids:["launch","growth","later"]}
+];
+
+const PLAN = [
+{id:"design",title:"Design and app identity",lead:"Trevor",intro:"Every visual decision the app needs, from the logo files to the iPhone icon. Locked so far: Sandstone and Noir Earth, no accent, no blue, E master mark v3.",sections:[
+ {title:"Logo for the app",tasks:[
+  ["Vector refinement of the E mark","Use the v3 SVG master as the source, never redraw it from memory."],
+  ["Tune the E for 16px favicon size","The gaps must stay readable at the smallest size."],
+  "Lockup spacing and minimum sizes",
+  ["Export the logo set","SVG, PNG, one-colour, light and dark."]]},
+ {title:"Colour",tasks:[
+  "Final production values for Sandstone and Noir Earth",
+  ["Neutral ramp of 8 to 10 steps","Each step with a fixed job: text, borders, surfaces."],
+  ["Semantic colours","Success, warning, error, info. None of them blue."],
+  "Contrast check against WCAG 2.2 AA",
+  ["Choose light-first or dark-first","Which theme a first-time user sees."]]},
+ {title:"Typography",tasks:[
+  ["Choose the display typeface","Avoid Inter at default settings."],
+  "Choose the body typeface",
+  ["Check the font licence","Some web licences charge more as traffic grows."],
+  "Type scale and weights"]},
+ {title:"App icons and screens",tasks:[
+  ["iPhone app icon","E on solid Noir or Sandstone."],
+  "Android adaptive icon",
+  "Splash screen",
+  "Favicon set for web",
+  "Sign-in email design",
+  "Link preview image"]},
+ {title:"Design system",tasks:[
+  "Write DESIGN.md",
+  "Spacing, radius and motion rules",
+  ["Component states","Default, hover, focus, active, disabled, loading."],
+  "Image direction for generated concepts"]}
+]},
+{id:"accounts",title:"Accounts and tools",lead:"Victor",intro:"Create these in order. Save every login and key in Bitwarden straight away, never in chat or code.",sections:[
+ {title:"Create now",tasks:[
+  ["Bitwarden","Shared vault for every password and key."],
+  ["GitHub","Code and automatic checks."],
+  ["Vercel","Hosts the web app."],
+  ["Supabase dev project","Database for testing, region eu-west-1."],
+  ["Supabase prod project","Database for real users, region eu-west-1."],
+  ["Anthropic API with a monthly cap","Claude inside the product."],
+  ["OpenAI API with a monthly cap","Concept images and edits."],
+  ["Resend, sending domain verified","Sign-in emails."],
+  ["Sentry","Errors and crashes."],
+  ["Cloudflare","Domain and protection."],
+  ["Expo","iPhone and Android builds."],
+  ["Langfuse","AI cost, speed and failures."],
+  ["PostHog","How people use the product."],
+  ["Better Stack","Downtime alerts."],
+  ["Decide the Studio domain","For example studio.enphitic.com."]]},
+ {title:"Account security",tasks:[
+  ["Two-factor sign-in on every account","GitHub, Vercel, Supabase, Cloudflare, Anthropic, OpenAI, Bitwarden, Expo."],
+  "Both of you have admin access everywhere",
+  "Recovery codes saved in Bitwarden",
+  "Spending caps or billing alerts on every paid service",
+  "Every key stored only in Bitwarden"]},
+ {title:"Your machine",tasks:[
+  ["Node 20.9 or newer","Check with node -v."],
+  "VS Code or Cursor",
+  "Claude Code",
+  ["Android Studio kept for the emulator","Expo uses it to run the Android app."]]}
+]},
+{id:"foundation",title:"Foundation",lead:"Victor",intro:"Repo, design system, database, sign-in, uploads and deployment. About five working days.",sections:[
+ {title:"Repository",tasks:[
+  "Folder structure created",
+  ["Turborepo monorepo","apps/web, packages/shared, ai, design-tokens, config."],
+  "TypeScript strict, ESLint, Prettier",
+  ["CLAUDE.md, AGENTS.md, README.md, DESIGN.md filled","With the eight engineering rules."],
+  "Branch protection on main",
+  ".env.example with names only",
+  ["Lint, typecheck and build pass","npm run dev shows a blank page."]]},
+ {title:"Design system in code",tasks:[
+  "Colour, spacing, radius and type tokens",
+  "Light and dark themes",
+  "Self-hosted fonts, three files at most",
+  ["Base components","Button, Input, Textarea, Card, Modal, Toast, Spinner, Empty state, every state."],
+  "E logo SVG in the app",
+  "Test page with every component in both themes"]},
+ {title:"Database",tasks:[
+  ["Tables","profiles, projects, project_inputs, versions, decisions, generation_jobs, assets, events."],
+  "Owner-only Row Level Security on every table",
+  "Private storage bucket with owner-only policies",
+  "claim_next_job() function",
+  "Profile created on sign-up",
+  "Upload limits enforced by the database",
+  "Applied to dev, then prod after review",
+  ["Security check","A second test user sees none of the first user’s rows or files."]]},
+ {title:"Environments",tasks:[
+  "Seed data for dev and previews",
+  "Test accounts for Trevor and Victor in dev",
+  ["Migration rollback plan","How to undo a bad database change."],
+  "Environment variables documented"]},
+ {title:"Sign-in backend",tasks:[
+  "Magic link with PKCE",
+  "Resend set as the email sender",
+  "Redirect URLs for local, previews and production",
+  "proxy.ts refreshes the session",
+  "Supabase clients in packages/shared",
+  "Signed-out users sent to sign-in"]},
+ {title:"Sign-in screens",tasks:[
+  "Sign-in page",
+  "Check your email page with resend",
+  "Callback route to home",
+  ["Error states","Expired link, wrong browser, invalid email."],
+  "Sign out",
+  "Tested on laptop and phone"]},
+ {title:"App shell and home",tasks:[
+  "Main layout with header, logo, account menu, theme",
+  "Home, Project and Account pages",
+  "Loading and error pages",
+  "Works on phone browsers",
+  "Project list with empty state",
+  "New project button"]},
+ {title:"Create project and uploads",tasks:[
+  "Create project API route",
+  "Upload screen: plan or sketch, brief, up to 5 references",
+  ["Upload API route","Server checks the real file type and size."],
+  "Upload-rights notice",
+  "Project page shows inputs through signed URLs"]},
+ {title:"Deploy",tasks:[
+  "Vercel functions in Dublin (dub1)",
+  "Previews use dev, production uses prod",
+  "Preview link on every pull request",
+  "Sentry connected to web",
+  "A real user can sign in and create a project"]}
+]},
+{id:"ai-core",title:"AI core",lead:"Victor",intro:"Connect Claude and OpenAI safely, define the Project Context, and run AI work as background jobs.",sections:[
+ {title:"ModelProvider",tasks:[
+  "Core actions are API routes, never server actions",
+  "Request and response types in packages/shared",
+  ["ModelProvider interface","reason, generateImage, editImage."],
+  "Anthropic adapter",
+  "OpenAI adapter",
+  "Every call records model, tokens, cost and duration",
+  "Timeout and one retry",
+  "Lint rule blocking AI SDKs outside packages/ai"]},
+ {title:"Project Context schema",tasks:[
+  ["Schema written","Spaces, openings with wall and offset, footprint, constraints, intent, style, references, flags, view plan."],
+  "Stable ID on every element",
+  "schema_version field",
+  "Tests with valid, broken and non-house examples"]},
+ {title:"Job system",tasks:[
+  "Create job API route",
+  "Worker API route",
+  "Worker triggered after each job, cron as backup",
+  "Worker protected by a secret",
+  "Function time limit fits image jobs",
+  "Stuck jobs recover, up to 3 attempts",
+  "Progress shown while jobs run"]},
+ {title:"Context extraction",tasks:[
+  "Extraction prompt",
+  "Validate, retry once, then ask the user",
+  "Saved as version 1",
+  "Flags for anything uncertain",
+  ["Tested on 5 inputs","Clean plan, hand sketch, phone photo, shop layout, bad image."]]},
+ {title:"AI safety and cost",tasks:[
+  "Prompts stored with version numbers",
+  "Per-request cost limit",
+  "Clear message when an AI call fails",
+  "Fallback when a model is down"]}
+]},
+{id:"product",title:"V1 product",lead:"Victor",intro:"The screens that prove the idea: read and correct the context, generate concepts, revise without starting over.",sections:[
+ {title:"Project Context panel",tasks:[
+  "Plan image beside the context",
+  "Edit spaces",
+  "Edit openings",
+  "Constraints, intent, style tags, reference roles",
+  "View plan editor",
+  "Flags to confirm or fix",
+  "Saving creates a new version",
+  "Generate button waits for flags"]},
+ {title:"Concept generation",tasks:[
+  "OpenAI funded and key set in Vercel",
+  "Prompt builder in plain, testable code",
+  "2 to 3 style directions on the same view plan",
+  "Image size pinned",
+  "Images saved with full provenance",
+  "Only failed images retried",
+  "Cost under $1.50 per workflow",
+  "Concepts arrive in under 3 minutes"]},
+ {title:"Concepts screen",tasks:[
+  "Grid: concepts as columns, views as rows",
+  "Images appear as each finishes",
+  "Full-screen viewer",
+  "Select a concept"]},
+ {title:"Revision engine",tasks:[
+  "Revision API route",
+  "Claude turns the request into a context diff",
+  "Diff validated and applied in code",
+  "Image edit with size pinned",
+  ["Mask composite with sharp","original × (1 − mask) + edit × mask"],
+  "Untouched views reused",
+  "New version with a change summary",
+  "Automated check: 0 pixels changed outside the mask"]},
+ {title:"Revision screen",tasks:[
+  "Brush tool with size, eraser, clear",
+  "Mask exported at the exact image size",
+  "Request box with examples",
+  "Conflict warning, never a refusal",
+  "Before and after slider"]},
+ {title:"History and finishing",tasks:[
+  "Version timeline with summaries and thumbnails",
+  "Open past versions read-only",
+  "Restore creates a new version",
+  "Home list with thumbnails and dates",
+  "AI-generated badge on images",
+  "Delete project removes files and rows",
+  "Account page and sign out"]},
+ {title:"Onboarding and help",tasks:[
+  "First-run welcome explaining the workflow",
+  ["Sample project","Ready-made project to try before uploading."],
+  "Hints on the Project Context panel",
+  "Example briefs and revision requests",
+  "Help link in the app",
+  "Report a problem link"]}
+]},
+{id:"v1-testing",title:"V1 testing",lead:"Both",intro:"Polish, measure, then test with 10 to 20 real people and record the demo.",sections:[
+ {title:"Design pass",tasks:[
+  "Every screen follows DESIGN.md",
+  "Loading, empty and error states everywhere",
+  "Checked on laptop, tablet and phone",
+  "Keyboard focus visible and contrast checked",
+  "All text reviewed for clarity"]},
+ {title:"Measurement",tasks:[
+  "Telemetry events with duration and cost",
+  "Queries: time to first concepts, cost per workflow, revisions per project"]},
+ {title:"Quality check",tasks:[
+  "10 projects through the whole workflow",
+  "Revision fidelity averages 4 out of 5 or better",
+  "Security test passed",
+  "Lint, typecheck and build pass"]},
+ {title:"Real users",tasks:[
+  "Pick 10 to 20 waitlist users",
+  "Invite them personally",
+  "Watch at least 5 use it live",
+  "Feedback form",
+  "Fix blockers daily",
+  "Top 5 problems written down",
+  "Decide what changes before public launch"]},
+ {title:"Demo",tasks:[
+  "Record a 60 to 90 second revision demo",
+  "Feature freeze"]}
+]},
+{id:"website",title:"Landing page",lead:"Both",intro:"The public page for Studio, built from real product output.",sections:[
+ {title:"Decisions",tasks:[
+  "Hero content",
+  "Primary call to action",
+  "Remove the old Orium OS page"]},
+ {title:"Build",tasks:[
+  ["Static HTML so AI crawlers can read it","The old site served an empty page to crawlers."],
+  "Waitlist live",
+  "Hero with the real before-and-after demo",
+  "Privacy page",
+  ["Speed and accessibility targets","LCP 2.0s, INP 150ms, CLS 0.05, WCAG 2.2 AA."]]},
+ {title:"Search and discovery",tasks:[
+  "Page titles and descriptions",
+  "sitemap.xml and robots.txt",
+  "Google Search Console",
+  "Privacy-friendly analytics",
+  "Waitlist conversion tracked"]}
+]},
+{id:"hardening",title:"Production hardening",lead:"Victor",intro:"Make Studio safe, reliable and fast before payments and mobile.",sections:[
+ {title:"Infrastructure",tasks:[
+  "Supabase Pro with daily backups",
+  "Point-in-time recovery",
+  "Custom domain through Cloudflare",
+  "Vercel Pro billing before the trial ends"]},
+ {title:"Limits",tasks:[
+  "Per-user daily workflow limit in the database",
+  "Rate limits on API routes",
+  "Upload checks re-tested"]},
+ {title:"AI quality",tasks:[
+  "Langfuse logging every AI call",
+  "Evals set of 20 saved projects",
+  "Evals run before every prompt or model change"]},
+ {title:"Tests and CI",tasks:[
+  "Vitest for schema, diff and composite",
+  "Playwright for the full workflow",
+  "GitHub Actions block merging on failure",
+  "Dependabot and secret scanning"]},
+ {title:"Sign-in upgrades",tasks:[
+  "Google sign-in",
+  "Asymmetric JWT keys in Supabase"]},
+ {title:"Performance",tasks:[
+  ["Load test","At least 50 workflows at the same time."],
+  "Thumbnails for every image",
+  "Images served through a CDN",
+  "Speed targets checked inside the app",
+  "Accessibility audit of every screen"]},
+ {title:"Backups and recovery",tasks:[
+  "Database restore tested",
+  "File restore tested",
+  "Incident plan: who does what when Studio is down"]}
+]},
+{id:"analytics",title:"Analytics and dashboards",lead:"Victor",intro:"Know who uses Studio, where they drop off, what each workflow costs, and whether revisions stay faithful.",sections:[
+ {title:"Tracking plan",tasks:[
+  ["Choose the main metric","Suggested: successful revisions per week."],
+  "Event list with properties",
+  "Same event names on web and mobile",
+  "Events linked to users without personal details",
+  "Consent banner where the law requires it"]},
+ {title:"Product analytics",tasks:[
+  "PostHog on web",
+  "PostHog on mobile",
+  ["Main funnel","Sign-up, project, context, concepts, revision."],
+  "Week 1 and week 4 retention",
+  "Session replay with private fields hidden",
+  "Feature flags ready"]},
+ {title:"Admin dashboard",tasks:[
+  ["Admin area protected by a role check in code","Only Trevor and Victor."],
+  "New users, projects and workflows per day",
+  "AI cost per day and per workflow",
+  "Revision fidelity over time",
+  "Job queue health: waiting, failed, average time",
+  "Recent errors linked to Sentry",
+  "Heaviest users and abuse flags",
+  "Look up a user for support"]},
+ {title:"AI dashboards",tasks:[
+  "Cost by model in Langfuse",
+  "Time per step",
+  "Failure and retry rates",
+  "Prompt version comparison"]},
+ {title:"Product numbers",tasks:[
+  "Waitlist sign-ups",
+  "Weekly active users",
+  "Paying users and monthly revenue",
+  "Cancellations",
+  "Cost per user against revenue per user"]},
+ {title:"Alerts",tasks:[
+  "Daily AI spend alert",
+  "Error spike alert",
+  "Failed jobs alert",
+  "Site down alert",
+  "Weekly metrics review"]}
+]},
+{id:"trust",title:"Privacy, safety and security",lead:"Both",intro:"Protect users’ data and their work. Confirm the legal items with a lawyer.",sections:[
+ {title:"Privacy",tasks:[
+  ["Uganda data protection registration","Check registration with the Personal Data Protection Office."],
+  "Basic GDPR readiness for European users",
+  ["Data map","What data Studio keeps, where, and for how long."],
+  "Data retention rules",
+  "Users can download their data",
+  "Account deletion removes rows and files",
+  "Terms of service and privacy policy",
+  "Consent at sign-up"]},
+ {title:"Content safety",tasks:[
+  "Moderation check on uploads",
+  "Moderation check on generated images",
+  "Rules for copyrighted reference images",
+  "Takedown process",
+  "Abuse reporting and blocking"]},
+ {title:"AI outputs",tasks:[
+  "Who owns generated designs, written in the terms",
+  "AI-generated label on outputs",
+  ["Not-for-construction notice","Concepts are not engineering or permit drawings."]]},
+ {title:"Security",tasks:[
+  "Key rotation schedule",
+  "Dependency audit",
+  "Security review before public launch",
+  "Least-privilege access for every service",
+  "Logs never contain keys or personal data"]}
+]},
+{id:"payments",title:"Payments",lead:"Both",intro:"Only once V1 users say they would pay. AI cost per user must stay well below the price.",sections:[
+ {title:"Pricing",tasks:[
+  "Free tier limits",
+  "Paid plan prices",
+  ["Margin check","A $15 user doing 4 workflows a month costs about $2 in AI."]]},
+ {title:"Web payments",tasks:[
+  "Plans and subscriptions tables",
+  "Monthly usage per user",
+  "Choose Paddle or Lemon Squeezy",
+  "Web checkout",
+  "Payment webhook route",
+  "Billing page: plan, upgrade, cancel"]},
+ {title:"Mobile money",tasks:[
+  "Choose Flutterwave or Pesapal",
+  "Mobile money checkout"]},
+ {title:"Limits",tasks:[
+  "Limits tied to plan",
+  "Upgrade prompt at the limit"]}
+]},
+{id:"mobile-prep",title:"Prepare for mobile",lead:"Victor",intro:"Make sure everything the phone apps need lives in shared code and the API.",sections:[
+ {title:"Audit",tasks:[
+  "Schema, types, contracts and Supabase client in packages/shared",
+  "Typed API client for every route",
+  "No product logic in web-only components",
+  "Every core action available as an API route",
+  "Routes accept mobile sign-in tokens",
+  "Upload route works with phone uploads"]}
+]},
+{id:"mobile",title:"Mobile app build",lead:"Victor",intro:"One Expo codebase for iPhone and Android. Start once V1 is validated on web.",sections:[
+ {title:"Setup",tasks:[
+  "Expo app with Expo Router in apps/mobile",
+  "Design tokens in the app",
+  "Supabase client from packages/shared",
+  "EAS builds set up"]},
+ {title:"Sign-in",tasks:[
+  "Welcome screen",
+  "Magic link with deep link back into the app",
+  "Google sign-in",
+  ["Apple sign-in","Apple requires it when Google sign-in is offered."]]},
+ {title:"Screens",tasks:[
+  "Home: project list, pull to refresh, empty state",
+  "New project: name and type",
+  "Plan from camera or gallery",
+  "Brief and up to 5 references",
+  "Project Context view and edit",
+  "Resolve flags",
+  "Generation progress screen",
+  "Swipe between concepts and views",
+  "Select a concept",
+  "Brush mask with React Native Skia",
+  "Revision request and before and after",
+  "Version history",
+  "Account deletion inside the app"]},
+ {title:"Platform features",tasks:[
+  "Push notifications when concepts are ready",
+  "Device tokens stored in the database",
+  "RevenueCat in-app subscriptions",
+  "Subscriptions synced with web"]},
+ {title:"Mobile details",tasks:[
+  "Camera and photo permission messages",
+  ["Universal links and Android app links","Email links open the app, not the browser."],
+  "App version and build numbering",
+  "Offline and slow-network states",
+  "Ask for push permission at the right moment",
+  "Small phones and tablets checked"]},
+ {title:"Testing",tasks:[
+  "Maestro tests for the main flow",
+  "Tested on a real iPhone",
+  "Tested on a real Android phone",
+  "Sentry connected to mobile"]}
+]},
+{id:"stores",title:"App Store and Play Store",lead:"Both",intro:"Everything needed to get both apps approved and live. Store rules change, so check each one before you start.",sections:[
+ {title:"Apple App Store",tasks:[
+  ["Enrol in the Apple Developer Program","$99 a year. Enrolling as a company needs a D-U-N-S number."],
+  "Bundle ID and app record in App Store Connect",
+  "Sign in with Apple configured",
+  "App privacy details",
+  "Privacy policy and support URLs",
+  "Age rating",
+  ["Export compliance answers","Apple asks about encryption use."],
+  "Screenshots for the required iPhone sizes",
+  ["iPad screenshots","Only if the app supports iPad."],
+  "App name, subtitle, description and keywords",
+  "App preview video",
+  ["Demo account for reviewers","Reviewers need a way to sign in."],
+  "Review notes explaining the AI features",
+  "TestFlight internal testing",
+  ["TestFlight external testing","Needs a short beta review."],
+  "Submit for App Review",
+  "Fix anything Apple flags",
+  "Release on the App Store"]},
+ {title:"Google Play Store",tasks:[
+  ["Google Play Console account","$25 once. Organisation accounts need a D-U-N-S number."],
+  "Identity verification",
+  "App created with package name",
+  "Data safety form",
+  "Content rating questionnaire",
+  "Target audience",
+  ["Store listing","512px icon, 1024 × 500 feature graphic, phone screenshots, description."],
+  "Demo account for reviewers",
+  "Internal testing track",
+  ["Closed testing","New personal accounts must run a closed test for 14 days before production. Check the current rule."],
+  "Apply for production access",
+  "Release on Google Play"]},
+ {title:"Both stores",tasks:[
+  "Both of you added to App Store Connect and Play Console",
+  "Release notes template",
+  "Over-the-air updates with EAS Update"]}
+]},
+{id:"launch",title:"Launch and support",lead:"Both",intro:"Launch day and the everyday running of Studio afterwards.",sections:[
+ {title:"Launch",tasks:[
+  "Pick the launch date",
+  "Launch day checklist",
+  "Email to the waitlist",
+  "Monitor errors and costs on launch day",
+  "Review metrics one week after launch"]},
+ {title:"Emails",tasks:[
+  ["SPF, DKIM and DMARC on the domain","So emails don’t land in spam."],
+  "Welcome email",
+  "Your concepts are ready email",
+  "Unsubscribe link on every marketing email"]},
+ {title:"Support",tasks:[
+  "Support email address",
+  "Help and FAQ page",
+  "Feedback form in the app",
+  "How bugs are sorted and fixed",
+  "Reply-time target for users",
+  "Crash monitoring checked daily in the first week",
+  "Reply to store reviews"]}
+]},
+{id:"growth",title:"Growth",lead:"Both",intro:"Add these once usage is steady and a real limit appears, not before.",sections:[
+ {title:"When needed",tasks:[
+  "Trigger.dev or Inngest for long jobs",
+  "Cloudflare R2 for large images",
+  "Gradual releases with feature flags",
+  "Support chat in the app",
+  "pgvector search across projects",
+  "Linear for engineering tasks",
+  "Figma Pro for the shared design system"]}
+]},
+{id:"later",title:"Later",lead:"Both",intro:"Only after V1 is validated.",sections:[
+ {title:"Later",tasks:[
+  ["3D and video views","Through fal.ai, Replicate or Modal; no owned GPUs."],
+  "Collaboration and teams",
+  ["OPID property layer","PostGIS and Mapbox. Not a legal title or registry."],
+  "SOC 2 through Vanta or Drata",
+  "ENPHITIC Code for developers"]}
+]}
+];
+
+/* ---------- Build index ---------- */
+const slug = s => s.toLowerCase().normalize("NFKD").replace(/[^\w\s-]/g, "").trim().replace(/[\s_]+/g, "-").slice(0, 64);
+const ORDER = GROUPS.flatMap(g => g.ids).map(id => PLAN.find(p => p.id === id)).filter(Boolean);
+ORDER.forEach((p, i) => {
+  p.num = i + 1; p.group = GROUPS.find(g => g.ids.includes(p.id));
+  const seen = new Set();
+  p.sections.forEach(s => {
+    s.key = `${p.id}/s/${slug(s.title)}`;
+    s.items = s.tasks.map(t => {
+      const [title, hint] = Array.isArray(t) ? t : [t, ""];
+      let id = `${p.id}/${slug(title)}`, n = 2; while (seen.has(id)) id = `${p.id}/${slug(title)}-${n++}`; seen.add(id);
+      return {id, title, hint};
+    });
+  });
+});
+const byId = id => ORDER.find(p => p.id === id);
+
+/* ---------- State ---------- */
+const LS = {state:"enphitic.roadmap.state", settings:"enphitic.roadmap.settings", person:"enphitic.roadmap.person", theme:"enphitic.roadmap.theme"};
+const emptyState = () => ({version:2, tasks:{}, custom:{}});
+const load = k => { try { return JSON.parse(localStorage.getItem(k)); } catch { return null; } };
+const store = (k, v) => { try { localStorage.setItem(k, JSON.stringify(v)); } catch {} };
+let state = load(LS.state) || emptyState(); state.tasks ||= {}; state.custom ||= {};
+let settings = Object.assign({repo:"enphitic-hash/studio_roadmap", branch:"main", path:"progress.json", token:""}, load(LS.settings) || {});
+let person = localStorage.getItem(LS.person) || "";
+let filter = "all", query = "", editingNote = null, pendingToggle = null, needsRender = false;
+
+const esc = s => String(s ?? "").replace(/[&<>"']/g, c => ({"&":"&amp;","<":"&lt;",">":"&gt;",'"':"&quot;","'":"&#39;"}[c]));
+const fmtDate = t => new Date(t).toLocaleDateString("en-GB", {day:"numeric", month:"short", year:"numeric"});
+const fmtTime = t => new Date(t).toLocaleTimeString([], {hour:"2-digit", minute:"2-digit"});
+
+function allTasks(){
+  const out = [];
+  ORDER.forEach(p => p.sections.forEach(s => {
+    s.items.forEach(t => out.push(Object.assign({phase:p, section:s, custom:false}, t)));
+    (state.custom[s.key] || []).filter(c => !c.deleted).forEach(c => out.push({id:c.id, title:c.title, hint:"", phase:p, section:s, custom:true}));
+  }));
+  return out;
+}
+const rec = id => state.tasks[id] || {};
+const isDone = id => !!rec(id).done;
+const counts = list => { const d = list.filter(t => isDone(t.id)).length; return {done:d, total:list.length, pct:list.length ? Math.round(d / list.length * 100) : 0}; };
+
+/* ---------- Routing ---------- */
+const main = document.getElementById("main"), side = document.getElementById("side");
+function route(){ const h = decodeURIComponent(location.hash.slice(1)); if (["overview","phases","search"].includes(h)) return h; return byId(h) ? h : "overview"; }
+
+/* ---------- Render ---------- */
+function render(){
+  const a = document.activeElement;
+  if (a && main.contains(a) && (a.tagName === "TEXTAREA" || (a.tagName === "INPUT" && a.type === "text"))) { needsRender = true; renderSide(); return; }
+  needsRender = false;
+  const r = route();
+  renderSide(); renderChrome(r);
+  if (r === "overview") renderOverview();
+  else if (r === "phases") renderPhases();
+  else if (r === "search") renderSearch();
+  else renderPhase(byId(r));
+}
+
+function ring(pct){ const c = 2 * Math.PI * 6.5; return `<svg class="ring" viewBox="0 0 16 16" aria-hidden="true"><circle class="bg" cx="8" cy="8" r="6.5"/><circle class="fg" cx="8" cy="8" r="6.5" stroke-dasharray="${c}" stroke-dashoffset="${c * (1 - pct / 100)}"/></svg>`; }
+
+function renderSide(){
+  const tasks = allTasks(), r = route();
+  let html = `<input class="search" id="sideSearch" type="search" placeholder="Search every step" aria-label="Search every step" value="${esc(r === "search" ? query : "")}">
+    <a class="home" href="#overview" ${r==="overview"?'aria-current="page"':""}><span>Overview</span><span class="muted">${counts(tasks).pct}%</span></a>`;
+  GROUPS.forEach(g => {
+    const gt = tasks.filter(t => g.ids.includes(t.phase.id)), gc = counts(gt);
+    html += `<div class="group-title"><span>${esc(g.title)}</span><span>${gc.done}/${gc.total}</span></div><ul class="navlist">`;
+    g.ids.map(byId).forEach(p => { const c = counts(tasks.filter(t => t.phase === p));
+      html += `<li><a href="#${p.id}" ${r===p.id?'aria-current="page"':""}><span class="n">${p.num}</span><span class="t">${esc(p.title)}</span>${ring(c.pct)}</a></li>`; });
+    html += `</ul>`;
+  });
+  const hadFocus = document.activeElement && document.activeElement.id === "sideSearch";
+  side.innerHTML = html;
+  const ss = document.getElementById("sideSearch");
+  ss.addEventListener("input", e => { query = e.target.value; if (route() !== "search") location.hash = "search"; else render(); });
+  if (hadFocus) { ss.focus(); ss.setSelectionRange(ss.value.length, ss.value.length); }
+}
+
+function renderChrome(r){
+  document.querySelectorAll("[data-person]").forEach(b => b.setAttribute("aria-pressed", String(b.dataset.person === person)));
+  document.querySelectorAll("#tabbar [data-tab]").forEach(t => {
+    const on = t.dataset.tab === r || (t.dataset.tab === "phases" && byId(r));
+    on ? t.setAttribute("aria-current", "page") : t.removeAttribute("aria-current"); });
+  document.getElementById("meBtn").innerHTML = person ? whoBadge(person) : `<span class="who v">?</span>`;
+  const t = localStorage.getItem(LS.theme) || "auto";
+  document.querySelectorAll("[data-theme-pick]").forEach(b => b.setAttribute("aria-pressed", String(b.dataset.themePick === t)));
+}
+
+function markSVG(pct){
+  const y = 195 - 134 * pct / 100;
+  const shapes = `<polygon points="67,61 219,61 189,91 37,91"/><polygon points="40,113 159,113 159,143 70,143 70,165 219,165 189,195 70,195 40,165"/>`;
+  return `<svg class="mark" viewBox="0 0 256 256" role="img" aria-label="${pct}% of the roadmap built">
+    <defs><clipPath id="build"><rect x="0" y="${y}" width="256" height="${256 - y}"/></clipPath></defs>
+    <g class="ghost">${shapes}</g><g class="solid" clip-path="url(#build)">${shapes}</g></svg>`;
+}
+const whoBadge = by => `<span class="who ${by === "Trevor" ? "t" : "v"}" title="${esc(by)}">${esc(by[0])}</span>`;
+
+function taskRow(t, showWhere){
+  const r = rec(t.id), done = !!r.done, cid = "cb-" + t.id.replace(/[^\w-]/g, "_"), editing = editingNote === t.id, meta = [];
+  if (done) meta.push(`<span>Done by ${esc(r.by)}, ${fmtDate(r.at)}</span>`);
+  if (showWhere) meta.push(`<a class="where" href="#${t.phase.id}">${t.phase.num}. ${esc(t.phase.title)}</a>`);
+  if (!editing) meta.push(`<button class="link" type="button" data-act="note" data-id="${esc(t.id)}">${r.note ? "Edit note" : "Add note"}</button>`);
+  if (t.custom && !editing) meta.push(`<button class="link danger" type="button" data-act="remove" data-id="${esc(t.id)}" data-key="${esc(t.section.key)}">Remove</button>`);
+  const note = editing
+    ? `<div class="noteedit"><textarea id="noteText" aria-label="Note for ${esc(t.title)}">${esc(r.note || "")}</textarea>
+       <div class="row"><button class="btn primary" type="button" data-act="saveNote" data-id="${esc(t.id)}">Save note</button><button class="btn" type="button" data-act="cancelNote">Cancel</button></div></div>`
+    : (r.note ? `<div class="note">${esc(r.note)}</div>` : "");
+  return `<li class="task ${done ? "is-done" : ""}">
+    <span class="check"><input type="checkbox" id="${cid}" data-act="toggle" data-id="${esc(t.id)}" ${done ? "checked" : ""}><span class="box"></span></span>
+    <div><label class="ttl" for="${cid}">${esc(t.title)}</label>${t.hint ? `<span class="hint">${esc(t.hint)}</span>` : ""}<div class="tmeta">${meta.join("")}</div>${note}</div>
+    ${done && r.by ? whoBadge(r.by) : "<span></span>"}</li>`;
+}
+
+function phaseRows(list, tasks){
+  return `<ul class="glist">${list.map(p => { const c = counts(tasks.filter(t => t.phase === p));
+    return `<li><a href="#${p.id}"><span class="num">${p.num}</span><span><span class="t">${esc(p.title)}</span><span class="l">${c.done === c.total ? "Complete" : `${c.total - c.done} to do`} · led by ${esc(p.lead)}</span></span>
+      <span class="bar" aria-hidden="true"><i style="width:${c.pct}%"></i></span><span class="c">${c.done}/${c.total}</span></a></li>`; }).join("")}</ul>`;
+}
+
+function renderOverview(){
+  const tasks = allTasks(), c = counts(tasks);
+  const by = n => tasks.filter(t => rec(t.id).done && rec(t.id).by === n).length;
+  const firstOpen = tasks.find(t => !isDone(t.id));
+  const cur = firstOpen ? firstOpen.phase : null;
+  const cc = cur ? counts(tasks.filter(t => t.phase === cur)) : null;
+  const next = tasks.filter(t => !isDone(t.id)).slice(0, 5);
+  const recent = tasks.filter(t => isDone(t.id)).sort((a, b) => rec(b.id).at - rec(a.id).at).slice(0, 6);
+  main.innerHTML = `
+    <section class="hero">${markSVG(c.pct)}
+      <div><h1>${c.done} of ${c.total} steps</h1>
+        <p>${c.pct}% of the way from the first design decision to ENPHITIC Studio live on the App Store and Google Play. The E fills as you build.</p>
+        <div class="people">
+          <div class="person">${whoBadge("Trevor")}<div><b>${by("Trevor")}</b><br><span class="l">by Trevor</span></div></div>
+          <div class="person">${whoBadge("Victor")}<div><b>${by("Victor")}</b><br><span class="l">by Victor</span></div></div>
+        </div></div></section>
+    ${cur ? `<a class="current" href="#${cur.id}"><span class="big">${cur.num}</span><span><span class="s">You’re on</span><br><span class="t">${esc(cur.title)}</span><br><span class="s">${cc.done} of ${cc.total} done</span></span><span class="go">Open</span></a>` : ""}
+    <h2>Next steps</h2>
+    ${next.length ? `<ul class="tasks">${next.map(t => taskRow(t, true)).join("")}</ul>` : `<p class="empty">Every step is done. Add what comes next from any phase.</p>`}
+    <h2>Recently done</h2>
+    ${recent.length ? `<ul class="tasks">${recent.map(t => taskRow(t, true)).join("")}</ul>` : `<p class="empty">Nothing ticked yet. Start with phase 1, Design and app identity.</p>`}`;
+}
+
+function renderPhases(){
+  const tasks = allTasks();
+  main.innerHTML = `<h1 class="page">Phases</h1><p class="lede">${ORDER.length} phases in ${GROUPS.length} stages, in the order you build them.</p>` +
+    GROUPS.map(g => { const gc = counts(tasks.filter(t => g.ids.includes(t.phase.id)));
+      return `<div class="ghead"><h2>${esc(g.title)}</h2><span class="muted">${gc.done}/${gc.total}</span></div>${phaseRows(g.ids.map(byId), tasks)}`; }).join("");
+}
+
+function renderPhase(p){
+  const tasks = allTasks(), pts = tasks.filter(t => t.phase === p), c = counts(pts), i = ORDER.indexOf(p);
+  const show = t => filter === "all" || (filter === "open" ? !isDone(t.id) : isDone(t.id));
+  const chips = p.sections.map(s => { const sc = counts(pts.filter(t => t.section === s));
+    return `<a class="chip ${sc.done === sc.total && sc.total ? "done" : ""}" href="#${p.id}" data-jump="${esc(s.key)}">${esc(s.title)} ${sc.done}/${sc.total}</a>`; }).join("");
+  let body = `<p class="intro-m">${esc(p.intro)}</p>`;
+  p.sections.forEach(s => {
+    const st = pts.filter(t => t.section === s), sc = counts(st), vis = st.filter(show);
+    body += `<h3 class="sec" id="sec-${esc(s.key.replace(/[^\w-]/g, "_"))}">${esc(s.title)}<span>${sc.done}/${sc.total}</span></h3>`;
+    body += vis.length ? `<ul class="tasks">${vis.map(t => taskRow(t, false)).join("")}</ul>` : `<p class="empty">Nothing ${filter === "open" ? "left to do" : "done yet"} here.</p>`;
+    body += `<form class="addrow" data-key="${esc(s.key)}"><input type="text" name="step" placeholder="Add a step to ${esc(s.title)}" aria-label="Add a step to ${esc(s.title)}"><button class="btn" type="submit">Add</button></form>`;
+  });
+  const prev = ORDER[i - 1], next = ORDER[i + 1];
+  main.innerHTML = `
+    <header class="phead">
+      <div class="row"><span class="bignum">${p.num}</span>
+        <div style="min-width:0"><h1 class="page">${esc(p.title)}</h1><p class="lede">${esc(p.intro)}</p>
+        <div class="meta">${esc(p.group.title)} · led by ${esc(p.lead)} · ${c.done} of ${c.total} done</div></div></div>
+      <div class="bar" aria-hidden="true"><i style="width:${c.pct}%"></i></div>
+      <div class="chips" aria-label="Sections">${chips}</div>
+    </header>
+    <div class="tools"><div class="seg" role="group" aria-label="Show steps">
+      ${["all","open","done"].map(f => `<button type="button" data-filter="${f}" aria-pressed="${filter === f}">${f === "all" ? "All" : f === "open" ? "To do" : "Done"}</button>`).join("")}
+    </div></div>${body}
+    <nav class="pager" aria-label="Phases">
+      ${prev ? `<a href="#${prev.id}"><span class="k">Previous</span><span class="t">${prev.num}. ${esc(prev.title)}</span></a>` : ""}
+      ${next ? `<a class="next" href="#${next.id}"><span class="k">Next</span><span class="t">${next.num}. ${esc(next.title)}</span></a>` : ""}
+    </nav>`;
+}
+
+function renderSearch(){
+  const q = query.trim().toLowerCase();
+  const hits = q ? allTasks().filter(t => (t.title + " " + t.hint + " " + (rec(t.id).note || "") + " " + t.phase.title).toLowerCase().includes(q)) : [];
+  const box = document.getElementById("mSearch");
+  const hadFocus = box && document.activeElement === box;
+  main.innerHTML = `<h1 class="page">Search</h1>
+    <input class="searchbox" id="mSearch" type="search" placeholder="Search every step, like logo or Apple" aria-label="Search every step" value="${esc(query)}" autocapitalize="off">
+    <div id="results">${!q ? `<p class="empty">Type a word to find any step across all phases.</p>` :
+      hits.length ? `<p class="muted">${hits.length} step${hits.length === 1 ? "" : "s"}</p><ul class="tasks">${hits.map(t => taskRow(t, true)).join("")}</ul>` :
+      `<p class="empty">No steps match “${esc(query.trim())}”. Try a shorter word.</p>`}</div>`;
+  const m = document.getElementById("mSearch");
+  m.addEventListener("input", e => { query = e.target.value; const pos = m.selectionStart; renderSearch(); const n = document.getElementById("mSearch"); n.focus(); n.setSelectionRange(pos, pos); });
+  if (hadFocus) m.focus();
+}
+
+/* ---------- Actions ---------- */
+function setTask(id, patch){ state.tasks[id] = Object.assign({}, rec(id), patch, {updated:Date.now()}); persist(); }
+function toggle(id, checked){
+  if (checked && !person) { pendingToggle = id; openModal("whoModal"); render(); return; }
+  setTask(id, checked ? {done:true, by:person, at:Date.now()} : {done:false, by:null, at:null});
+  if (navigator.vibrate && checked) navigator.vibrate(8);
+  render();
+}
+main.addEventListener("change", e => { const el = e.target; if (el.dataset.act === "toggle") toggle(el.dataset.id, el.checked); });
+main.addEventListener("click", e => {
+  const jump = e.target.closest("[data-jump]");
+  if (jump) { e.preventDefault(); const el = document.getElementById("sec-" + jump.dataset.jump.replace(/[^\w-]/g, "_"));
+    if (el) { const off = document.getElementById("top").offsetHeight + (matchMedia("(max-width:900px)").matches ? document.querySelector(".phead").offsetHeight : 0) + 8;
+      window.scrollTo({top:el.getBoundingClientRect().top + scrollY - off, behavior:matchMedia("(prefers-reduced-motion: reduce)").matches ? "auto" : "smooth"}); } return; }
+  const b = e.target.closest("[data-act],[data-filter]"); if (!b) return;
+  if (b.dataset.filter) { filter = b.dataset.filter; render(); return; }
+  const id = b.dataset.id;
+  switch (b.dataset.act) {
+    case "note": editingNote = id; render(); document.getElementById("noteText")?.focus(); break;
+    case "cancelNote": editingNote = null; document.activeElement.blur(); render(); break;
+    case "saveNote": { const v = document.getElementById("noteText").value.trim(); editingNote = null; document.activeElement.blur(); setTask(id, {note:v}); render(); break; }
+    case "remove": { if (!confirm("Remove this step?")) return;
+      const item = (state.custom[b.dataset.key] || []).find(c => c.id === id); if (item) { item.deleted = true; item.updated = Date.now(); }
+      persist(); render(); break; }
+  }
+});
+main.addEventListener("submit", e => {
+  const f = e.target.closest("form.addrow"); if (!f) return; e.preventDefault();
+  const input = f.elements.step, title = input.value.trim(); if (!title) return;
+  const key = f.dataset.key;
+  (state.custom[key] ||= []).push({id:`custom/${Date.now().toString(36)}${Math.random().toString(36).slice(2, 6)}`, title, created:Date.now(), updated:Date.now()});
+  input.value = ""; input.blur(); persist(); render();
+});
+
+document.addEventListener("click", e => {
+  const p = e.target.closest("[data-person]"); if (p) { setPerson(p.dataset.person); return; }
+  const o = e.target.closest("[data-open]"); if (o) { if (o.dataset.open === "settings") { fillSettings(); openModal("settingsModal"); } return; }
+  if (e.target.closest("[data-close]")) { closeModal("settingsModal"); return; }
+  const t = e.target.closest("[data-theme-pick]"); if (t) { const v = t.dataset.themePick; v === "auto" ? localStorage.removeItem(LS.theme) : localStorage.setItem(LS.theme, v); applyTheme(); renderChrome(route()); }
+});
+document.getElementById("status").addEventListener("click", () => { fillSettings(); openModal("settingsModal"); });
+document.querySelectorAll("[data-pick]").forEach(b => b.addEventListener("click", () => {
+  setPerson(b.dataset.pick); closeModal("whoModal");
+  if (pendingToggle) { const id = pendingToggle; pendingToggle = null; toggle(id, true); }
+}));
+function setPerson(p){ person = p; localStorage.setItem(LS.person, p); render(); }
+
+window.addEventListener("hashchange", () => {
+  const r = route(); if (r !== "search") query = ""; filter = "all"; editingNote = null; render();
+  if (r === "search") document.getElementById("mSearch")?.focus(); else { main.focus({preventScroll:true}); window.scrollTo(0, 0); }
+});
+document.addEventListener("focusout", () => setTimeout(() => { if (needsRender) render(); }, 0));
+
+/* Theme */
+function applyTheme(){ const t = localStorage.getItem(LS.theme); if (t) document.documentElement.dataset.theme = t; else delete document.documentElement.dataset.theme; }
+applyTheme();
+
+/* Sheets */
+function openModal(id){ document.getElementById(id).classList.add("open"); document.body.style.overflow = "hidden"; }
+function closeModal(id){ document.getElementById(id).classList.remove("open"); if (!document.querySelector(".backdrop.open")) document.body.style.overflow = ""; }
+document.querySelectorAll(".backdrop").forEach(m => m.addEventListener("click", e => { if (e.target === m && (m.id !== "whoModal" || person)) closeModal(m.id); }));
+document.addEventListener("keydown", e => { if (e.key === "Escape") { closeModal("settingsModal"); if (person) closeModal("whoModal"); } });
+
+/* Measure sticky header for offsets */
+function measure(){ document.documentElement.style.setProperty("--top-h", document.getElementById("top").offsetHeight + "px"); }
+addEventListener("resize", measure); addEventListener("orientationchange", measure);
+
+/* ---------- Sync with GitHub ---------- */
+const statusEl = document.getElementById("status"), statusText = document.getElementById("statusText");
+function setStatus(kind, extra){
+  statusEl.dataset.kind = kind;
+  const txt = {local:"Saved on this device only", pending:"Saving…", synced:`Synced ${fmtTime(Date.now())}`, readonly:"View only, add a token to save", error:`Sync failed: ${extra || "unknown error"}`}[kind];
+  statusText.textContent = txt; statusEl.setAttribute("aria-label", txt);
+}
+function sortKeys(v){ if (Array.isArray(v)) return v.map(sortKeys); if (v && typeof v === "object") return Object.keys(v).sort().reduce((o, k) => (o[k] = sortKeys(v[k]), o), {}); return v; }
+const canon = v => JSON.stringify(sortKeys(v), null, 2);
+function b64e(str){ const b = new TextEncoder().encode(str); let s = ""; for (let i = 0; i < b.length; i += 0x8000) s += String.fromCharCode.apply(null, b.subarray(i, i + 0x8000)); return btoa(s); }
+function b64d(x){ const s = atob(x.replace(/\s/g, "")), b = new Uint8Array(s.length); for (let i = 0; i < s.length; i++) b[i] = s.charCodeAt(i); return new TextDecoder().decode(b); }
+function merge(a, b){
+  a = a || emptyState(); b = b || emptyState(); const out = emptyState();
+  new Set([...Object.keys(a.tasks || {}), ...Object.keys(b.tasks || {})]).forEach(id => {
+    const x = (a.tasks || {})[id], y = (b.tasks || {})[id]; out.tasks[id] = !x ? y : !y ? x : ((y.updated || 0) > (x.updated || 0) ? y : x); });
+  new Set([...Object.keys(a.custom || {}), ...Object.keys(b.custom || {})]).forEach(k => { const m = new Map();
+    [...((a.custom || {})[k] || []), ...((b.custom || {})[k] || [])].forEach(c => { const cur = m.get(c.id); if (!cur || (c.updated || 0) > (cur.updated || 0)) m.set(c.id, c); });
+    out.custom[k] = [...m.values()].sort((x, y) => (x.created || 0) - (y.created || 0)); });
+  return out;
+}
+const api = () => `https://api.github.com/repos/${settings.repo.trim()}/contents/${settings.path.trim().replace(/^\/+/, "")}`;
+const headers = () => Object.assign({"Accept":"application/vnd.github+json"}, settings.token ? {"Authorization":`Bearer ${settings.token.trim()}`} : {});
+async function httpError(r){ let m = `${r.status}`; try { const j = await r.json(); if (j.message) m += ` ${j.message}`; } catch {} const e = new Error(m); e.status = r.status; return e; }
+async function ghGet(){
+  const r = await fetch(`${api()}?ref=${encodeURIComponent(settings.branch || "main")}`, {headers:headers(), cache:"no-store"});
+  if (r.status === 404) return {sha:null, data:null};
+  if (!r.ok) throw await httpError(r);
+  const j = await r.json(); return {sha:j.sha, data:JSON.parse(b64d(j.content))};
+}
+async function ghPut(data, sha){
+  const body = {message:`Roadmap update by ${person || "someone"}`, content:b64e(canon(data) + "\n"), branch:settings.branch || "main"};
+  if (sha) body.sha = sha;
+  const r = await fetch(api(), {method:"PUT", headers:Object.assign({"Content-Type":"application/json"}, headers()), body:JSON.stringify(body)});
+  if (!r.ok) throw await httpError(r);
+}
+let syncTimer = null, syncing = false, again = false;
+function persist(){ store(LS.state, state); if (!settings.token) { setStatus("local"); return; } setStatus("pending"); clearTimeout(syncTimer); syncTimer = setTimeout(syncNow, 1000); }
+async function syncNow(){
+  if (!settings.repo) { setStatus("local"); return; }
+  if (syncing) { again = true; return; }
+  syncing = true;
+  try {
+    for (let attempt = 0; attempt < 3; attempt++) {
+      const remote = await ghGet();
+      const merged = merge(state, remote.data);
+      const changed = canon(merged) !== canon(state);
+      state = merged; store(LS.state, state); if (changed) render();
+      if (remote.data && canon(merged) === canon(merge(remote.data, null))) { setStatus(settings.token ? "synced" : "readonly"); break; }
+      if (!settings.token) { setStatus("readonly"); break; }
+      try { await ghPut(merged, remote.sha); setStatus("synced"); break; }
+      catch (e) { if ((e.status === 409 || e.status === 422) && attempt < 2) continue; throw e; }
+    }
+  } catch (e) { setStatus("error", e.status === 401 ? "token rejected" : e.status === 404 ? "repository not found" : e.message); }
+  finally { syncing = false; if (again) { again = false; syncNow(); } }
+}
+setInterval(() => { if (document.visibilityState === "visible" && settings.token && !syncing) syncNow(); }, 30000);
+document.addEventListener("visibilitychange", () => { if (document.visibilityState === "visible" && settings.token) syncNow(); });
+
+/* Settings sheet */
+const $ = id => document.getElementById(id);
+const setMsg = (t, err) => { $("setMsg").textContent = t; $("setMsg").classList.toggle("err", !!err); };
+function fillSettings(){ $("fRepo").value = settings.repo; $("fBranch").value = settings.branch; $("fPath").value = settings.path; $("fToken").value = settings.token; setMsg(""); renderChrome(route()); }
+function readSettings(){ return {repo:$("fRepo").value.trim().replace(/^https?:\/\/github\.com\//, "").replace(/\/$/, ""), branch:$("fBranch").value.trim() || "main", path:$("fPath").value.trim() || "progress.json", token:$("fToken").value.trim()}; }
+$("saveSettings").addEventListener("click", async () => {
+  const s = readSettings();
+  if (!/^[\w.-]+\/[\w.-]+$/.test(s.repo)) { setMsg("Enter the repository as owner/name, for example enphitic-hash/studio_roadmap.", true); return; }
+  settings = s; store(LS.settings, settings); setMsg("Syncing…"); await syncNow();
+  const bad = statusEl.dataset.kind === "error"; setMsg(bad ? statusText.textContent : settings.token ? "Saved. Progress now syncs with GitHub." : "Saved in view-only mode. Add a token to save progress.", bad);
+});
+$("testSettings").addEventListener("click", async () => {
+  const s = readSettings(); if (!/^[\w.-]+\/[\w.-]+$/.test(s.repo)) { setMsg("Enter the repository as owner/name.", true); return; }
+  setMsg("Testing…");
+  try {
+    const r = await fetch(`https://api.github.com/repos/${s.repo}`, {headers:Object.assign({"Accept":"application/vnd.github+json"}, s.token ? {"Authorization":`Bearer ${s.token}`} : {})});
+    if (!r.ok) throw await httpError(r);
+    const j = await r.json(), push = j.permissions && j.permissions.push;
+    setMsg(!s.token ? "Connected in view-only mode. Add a token to save." : push ? "Connected. This token can save progress." : "Connected, but this token can’t save. Give it Contents: Read and write.", !!s.token && !push);
+  } catch (e) { setMsg(e.status === 401 ? "The token was rejected. Check it hasn’t expired." : e.status === 404 ? "Repository not found, or the token can’t see it." : `Connection failed: ${e.message}`, true); }
+});
+$("exportBtn").addEventListener("click", () => {
+  const a = document.createElement("a"); a.href = URL.createObjectURL(new Blob([canon(state)], {type:"application/json"}));
+  a.download = `studio-roadmap-${new Date().toISOString().slice(0, 10)}.json`; a.click(); setTimeout(() => URL.revokeObjectURL(a.href), 1000);
+});
+$("importFile").addEventListener("change", async e => {
+  const file = e.target.files[0]; if (!file) return;
+  try { const data = JSON.parse(await file.text()); if (!data || typeof data.tasks !== "object") throw new Error("not a roadmap backup");
+    state = merge(state, data); persist(); render(); setMsg("Backup restored and merged."); }
+  catch (err) { setMsg(`That file couldn’t be restored: ${err.message}.`, true); }
+  e.target.value = "";
+});
+
+/* ---------- Start ---------- */
+measure(); render();
+if (!person) openModal("whoModal");
+if (settings.token) syncNow(); else setStatus("local");
+</script>
+</body>
+</html>
