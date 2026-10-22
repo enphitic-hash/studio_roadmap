@@ -2,10 +2,22 @@
   "custom": {},
   "tasks": {
     "design/export-the-logo-set": {
-      "at": null,
-      "by": null,
-      "done": false,
-      "updated": 1792691363893
+      "at": 1792692517767,
+      "by": "Victor",
+      "done": true,
+      "updated": 1792692517767
+    },
+    "design/lockup-spacing-and-minimum-sizes": {
+      "at": 1792692517066,
+      "by": "Victor",
+      "done": true,
+      "updated": 1792692517066
+    },
+    "design/tune-the-e-for-16px-favicon-size": {
+      "at": 1792692515516,
+      "by": "Victor",
+      "done": true,
+      "updated": 1792692515516
     },
     "design/vector-refinement-of-the-e-mark": {
       "at": 1792692513847,
