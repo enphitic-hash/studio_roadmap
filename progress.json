@@ -1,5 +1,12 @@
 {
   "custom": {},
-  "tasks": {},
+  "tasks": {
+    "design/export-the-logo-set": {
+      "at": null,
+      "by": null,
+      "done": false,
+      "updated": 1792691363893
+    }
+  },
   "version": 2
 }
