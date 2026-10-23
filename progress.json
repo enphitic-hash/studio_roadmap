@@ -1,6 +1,12 @@
 {
   "custom": {},
   "tasks": {
+    "design/android-adaptive-icon": {
+      "at": 1792762324868,
+      "by": "Trevor",
+      "done": true,
+      "updated": 1792762324868
+    },
     "design/check-the-font-licence": {
       "at": 1792762321431,
       "by": "Trevor",
@@ -37,11 +43,23 @@
       "done": true,
       "updated": 1792738507602
     },
+    "design/favicon-set-for-web": {
+      "at": 1792762326472,
+      "by": "Trevor",
+      "done": true,
+      "updated": 1792762326472
+    },
     "design/final-production-values-for-sandstone-and-noir-earth": {
       "at": 1792738513220,
       "by": "Trevor",
       "done": true,
       "updated": 1792738513220
+    },
+    "design/iphone-app-icon": {
+      "at": 1792762324286,
+      "by": "Trevor",
+      "done": true,
+      "updated": 1792762324286
     },
     "design/lockup-spacing-and-minimum-sizes": {
       "at": 1792738504612,
@@ -60,6 +78,18 @@
       "by": "Trevor",
       "done": true,
       "updated": 1792738515498
+    },
+    "design/sign-in-email-design": {
+      "at": 1792762327601,
+      "by": "Trevor",
+      "done": true,
+      "updated": 1792762327601
+    },
+    "design/splash-screen": {
+      "at": 1792762325658,
+      "by": "Trevor",
+      "done": true,
+      "updated": 1792762325658
     },
     "design/tune-the-e-for-16px-favicon-size": {
       "at": 1792738502965,
