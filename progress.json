@@ -7,6 +7,12 @@
       "done": true,
       "updated": 1792762455722
     },
+    "accounts/better-stack": {
+      "at": 1792762462428,
+      "by": "Victor",
+      "done": true,
+      "updated": 1792762462428
+    },
     "accounts/bitwarden": {
       "at": 1792762451331,
       "by": "Victor",
@@ -31,11 +37,23 @@
       "done": true,
       "updated": 1792762452695
     },
+    "accounts/langfuse": {
+      "at": 1792762461263,
+      "by": "Victor",
+      "done": true,
+      "updated": 1792762461263
+    },
     "accounts/openai-api-with-a-monthly-cap": {
       "at": 1792762456711,
       "by": "Victor",
       "done": true,
       "updated": 1792762456711
+    },
+    "accounts/posthog": {
+      "at": 1792762462776,
+      "by": "Victor",
+      "done": true,
+      "updated": 1792762462776
     },
     "accounts/resend-sending-domain-verified": {
       "at": 1792762457278,
