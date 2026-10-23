@@ -1,6 +1,12 @@
 {
   "custom": {},
   "tasks": {
+    "design/contrast-check-against-wcag-22-aa": {
+      "at": 1792738516373,
+      "by": "Trevor",
+      "done": true,
+      "updated": 1792738516373
+    },
     "design/export-the-logo-set": {
       "at": 1792738507602,
       "by": "Trevor",
@@ -26,10 +32,10 @@
       "updated": 1792738514691
     },
     "design/semantic-colours": {
-      "at": null,
-      "by": null,
-      "done": false,
-      "updated": 1792693000543
+      "at": 1792738515498,
+      "by": "Trevor",
+      "done": true,
+      "updated": 1792738515498
     },
     "design/tune-the-e-for-16px-favicon-size": {
       "at": 1792738502965,
