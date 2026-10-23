@@ -1,11 +1,29 @@
 {
   "custom": {},
   "tasks": {
+    "design/check-the-font-licence": {
+      "at": 1792762321431,
+      "by": "Trevor",
+      "done": true,
+      "updated": 1792762321431
+    },
     "design/choose-light-first-or-dark-first": {
       "at": 1792738518346,
       "by": "Trevor",
       "done": true,
       "updated": 1792738518346
+    },
+    "design/choose-the-body-typeface": {
+      "at": 1792762320936,
+      "by": "Trevor",
+      "done": true,
+      "updated": 1792762320936
+    },
+    "design/choose-the-display-typeface": {
+      "at": 1792762319799,
+      "by": "Trevor",
+      "done": true,
+      "updated": 1792762319799
     },
     "design/contrast-check-against-wcag-22-aa": {
       "at": 1792738516373,
