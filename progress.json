@@ -1,6 +1,12 @@
 {
   "custom": {},
   "tasks": {
+    "accounts/anthropic-api-with-a-monthly-cap": {
+      "at": 1792762455722,
+      "by": "Victor",
+      "done": true,
+      "updated": 1792762455722
+    },
     "accounts/bitwarden": {
       "at": 1792762451331,
       "by": "Victor",
@@ -12,6 +18,24 @@
       "by": "Victor",
       "done": true,
       "updated": 1792762452695
+    },
+    "accounts/openai-api-with-a-monthly-cap": {
+      "at": 1792762456711,
+      "by": "Victor",
+      "done": true,
+      "updated": 1792762456711
+    },
+    "accounts/resend-sending-domain-verified": {
+      "at": 1792762457278,
+      "by": "Victor",
+      "done": true,
+      "updated": 1792762457278
+    },
+    "accounts/sentry": {
+      "at": 1792762458404,
+      "by": "Victor",
+      "done": true,
+      "updated": 1792762458404
     },
     "accounts/supabase-dev-project": {
       "at": 1792762454791,
