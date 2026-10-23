@@ -61,6 +61,12 @@
       "done": true,
       "updated": 1792762324286
     },
+    "design/link-preview-image": {
+      "at": 1792762328323,
+      "by": "Trevor",
+      "done": true,
+      "updated": 1792762328323
+    },
     "design/lockup-spacing-and-minimum-sizes": {
       "at": 1792738504612,
       "by": "Trevor",
@@ -85,6 +91,12 @@
       "done": true,
       "updated": 1792762327601
     },
+    "design/spacing-radius-and-motion-rules": {
+      "at": 1792762330148,
+      "by": "Trevor",
+      "done": true,
+      "updated": 1792762330148
+    },
     "design/splash-screen": {
       "at": 1792762325658,
       "by": "Trevor",
@@ -108,6 +120,12 @@
       "by": "Trevor",
       "done": true,
       "updated": 1792738501934
+    },
+    "design/write-designmd": {
+      "at": 1792762329710,
+      "by": "Trevor",
+      "done": true,
+      "updated": 1792762329710
     }
   },
   "version": 2
