@@ -44,10 +44,10 @@
       "updated": 1792738516373
     },
     "design/export-the-logo-set": {
-      "at": 1792738507602,
-      "by": "Trevor",
-      "done": true,
-      "updated": 1792738507602
+      "at": null,
+      "by": null,
+      "done": false,
+      "updated": 1792762401187
     },
     "design/favicon-set-for-web": {
       "at": 1792762326472,
@@ -80,10 +80,10 @@
       "updated": 1792762328323
     },
     "design/lockup-spacing-and-minimum-sizes": {
-      "at": 1792738504612,
-      "by": "Trevor",
+      "at": 1792762401828,
+      "by": "Victor",
       "done": true,
-      "updated": 1792738504612
+      "updated": 1792762401828
     },
     "design/neutral-ramp-of-8-to-10-steps": {
       "at": 1792738514691,
@@ -116,10 +116,10 @@
       "updated": 1792762325658
     },
     "design/tune-the-e-for-16px-favicon-size": {
-      "at": null,
-      "by": null,
-      "done": false,
-      "updated": 1792762399692
+      "at": 1792762402612,
+      "by": "Victor",
+      "done": true,
+      "updated": 1792762402612
     },
     "design/type-scale-and-weights": {
       "at": 1792762322260,
@@ -128,10 +128,10 @@
       "updated": 1792762322260
     },
     "design/vector-refinement-of-the-e-mark": {
-      "at": null,
-      "by": null,
-      "done": false,
-      "updated": 1792762398775
+      "at": 1792762403527,
+      "by": "Victor",
+      "done": true,
+      "updated": 1792762403527
     },
     "design/write-designmd": {
       "at": 1792762329710,
