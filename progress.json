@@ -13,6 +13,24 @@
       "done": true,
       "updated": 1792762452695
     },
+    "accounts/supabase-dev-project": {
+      "at": 1792762454791,
+      "by": "Victor",
+      "done": true,
+      "updated": 1792762454791
+    },
+    "accounts/supabase-prod-project": {
+      "at": 1792762454443,
+      "by": "Victor",
+      "done": true,
+      "updated": 1792762454444
+    },
+    "accounts/vercel": {
+      "at": 1792762453148,
+      "by": "Victor",
+      "done": true,
+      "updated": 1792762453148
+    },
     "design/android-adaptive-icon": {
       "at": 1792762426643,
       "by": "Victor",
