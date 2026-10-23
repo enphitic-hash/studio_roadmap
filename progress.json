@@ -1,6 +1,18 @@
 {
   "custom": {},
   "tasks": {
+    "accounts/bitwarden": {
+      "at": 1792762451331,
+      "by": "Victor",
+      "done": true,
+      "updated": 1792762451331
+    },
+    "accounts/github": {
+      "at": 1792762452695,
+      "by": "Victor",
+      "done": true,
+      "updated": 1792762452695
+    },
     "design/android-adaptive-icon": {
       "at": 1792762426643,
       "by": "Victor",
