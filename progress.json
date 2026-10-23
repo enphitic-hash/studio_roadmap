@@ -25,6 +25,12 @@
       "done": true,
       "updated": 1792762459801
     },
+    "accounts/decide-the-studio-domain": {
+      "at": 1792762463958,
+      "by": "Victor",
+      "done": true,
+      "updated": 1792762463958
+    },
     "accounts/expo": {
       "at": 1792762460483,
       "by": "Victor",
@@ -78,6 +84,12 @@
       "by": "Victor",
       "done": true,
       "updated": 1792762454444
+    },
+    "accounts/two-factor-sign-in-on-every-account": {
+      "at": 1792762466026,
+      "by": "Victor",
+      "done": true,
+      "updated": 1792762466026
     },
     "accounts/vercel": {
       "at": 1792762453148,
