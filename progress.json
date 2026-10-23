@@ -2,10 +2,10 @@
   "custom": {},
   "tasks": {
     "design/export-the-logo-set": {
-      "at": null,
-      "by": null,
-      "done": false,
-      "updated": 1792692984730
+      "at": 1792738506085,
+      "by": "Trevor",
+      "done": true,
+      "updated": 1792738506085
     },
     "design/final-production-values-for-sandstone-and-noir-earth": {
       "at": null,
@@ -14,10 +14,10 @@
       "updated": 1792692987228
     },
     "design/lockup-spacing-and-minimum-sizes": {
-      "at": null,
-      "by": null,
-      "done": false,
-      "updated": 1792692579083
+      "at": 1792738504612,
+      "by": "Trevor",
+      "done": true,
+      "updated": 1792738504612
     },
     "design/neutral-ramp-of-8-to-10-steps": {
       "at": null,
