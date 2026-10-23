@@ -1,6 +1,12 @@
 {
   "custom": {},
   "tasks": {
+    "accounts/android-studio-kept-for-the-emulator": {
+      "at": 1792762476318,
+      "by": "Victor",
+      "done": true,
+      "updated": 1792762476318
+    },
     "accounts/anthropic-api-with-a-monthly-cap": {
       "at": 1792762455722,
       "by": "Victor",
@@ -24,6 +30,12 @@
       "by": "Victor",
       "done": true,
       "updated": 1792762466801
+    },
+    "accounts/claude-code": {
+      "at": 1792762474900,
+      "by": "Victor",
+      "done": true,
+      "updated": 1792762474900
     },
     "accounts/cloudflare": {
       "at": 1792762459801,
