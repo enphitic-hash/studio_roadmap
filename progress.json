@@ -2,10 +2,10 @@
   "custom": {},
   "tasks": {
     "design/android-adaptive-icon": {
-      "at": 1792762324868,
-      "by": "Trevor",
+      "at": 1792762426643,
+      "by": "Victor",
       "done": true,
-      "updated": 1792762324868
+      "updated": 1792762426643
     },
     "design/check-the-font-licence": {
       "at": 1792762422108,
@@ -50,10 +50,10 @@
       "updated": 1792762407221
     },
     "design/favicon-set-for-web": {
-      "at": 1792762326472,
-      "by": "Trevor",
+      "at": 1792762428494,
+      "by": "Victor",
       "done": true,
-      "updated": 1792762326472
+      "updated": 1792762428494
     },
     "design/final-production-values-for-sandstone-and-noir-earth": {
       "at": 1792762410555,
@@ -68,10 +68,10 @@
       "updated": 1792762331138
     },
     "design/iphone-app-icon": {
-      "at": 1792762324286,
-      "by": "Trevor",
+      "at": 1792762425503,
+      "by": "Victor",
       "done": true,
-      "updated": 1792762324286
+      "updated": 1792762425503
     },
     "design/link-preview-image": {
       "at": 1792762328323,
@@ -98,10 +98,10 @@
       "updated": 1792762413835
     },
     "design/sign-in-email-design": {
-      "at": 1792762327601,
-      "by": "Trevor",
+      "at": 1792762429215,
+      "by": "Victor",
       "done": true,
-      "updated": 1792762327601
+      "updated": 1792762429215
     },
     "design/spacing-radius-and-motion-rules": {
       "at": 1792762330148,
@@ -110,10 +110,10 @@
       "updated": 1792762330148
     },
     "design/splash-screen": {
-      "at": 1792762325658,
-      "by": "Trevor",
+      "at": 1792762427308,
+      "by": "Victor",
       "done": true,
-      "updated": 1792762325658
+      "updated": 1792762427308
     },
     "design/tune-the-e-for-16px-favicon-size": {
       "at": 1792762402612,
