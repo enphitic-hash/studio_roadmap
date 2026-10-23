@@ -19,6 +19,12 @@
       "done": true,
       "updated": 1792762451331
     },
+    "accounts/both-of-you-have-admin-access-everywhere": {
+      "at": 1792762466801,
+      "by": "Victor",
+      "done": true,
+      "updated": 1792762466801
+    },
     "accounts/cloudflare": {
       "at": 1792762459801,
       "by": "Victor",
@@ -30,6 +36,12 @@
       "by": "Victor",
       "done": true,
       "updated": 1792762463958
+    },
+    "accounts/every-key-stored-only-in-bitwarden": {
+      "at": 1792762467730,
+      "by": "Victor",
+      "done": true,
+      "updated": 1792762467730
     },
     "accounts/expo": {
       "at": 1792762460483,
@@ -61,6 +73,12 @@
       "done": true,
       "updated": 1792762462776
     },
+    "accounts/recovery-codes-saved-in-bitwarden": {
+      "at": 1792762468532,
+      "by": "Victor",
+      "done": true,
+      "updated": 1792762468532
+    },
     "accounts/resend-sending-domain-verified": {
       "at": 1792762457278,
       "by": "Victor",
@@ -72,6 +90,12 @@
       "by": "Victor",
       "done": true,
       "updated": 1792762458404
+    },
+    "accounts/spending-caps-or-billing-alerts-on-every-paid-service": {
+      "at": 1792762468112,
+      "by": "Victor",
+      "done": true,
+      "updated": 1792762468112
     },
     "accounts/supabase-dev-project": {
       "at": 1792762454791,
