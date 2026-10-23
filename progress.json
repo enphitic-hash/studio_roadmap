@@ -1,6 +1,12 @@
 {
   "custom": {},
   "tasks": {
+    "design/choose-light-first-or-dark-first": {
+      "at": 1792738518346,
+      "by": "Trevor",
+      "done": true,
+      "updated": 1792738518346
+    },
     "design/contrast-check-against-wcag-22-aa": {
       "at": 1792738516373,
       "by": "Trevor",
