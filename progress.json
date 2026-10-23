@@ -282,6 +282,456 @@
       "by": "Victor",
       "done": true,
       "updated": 1792762431548
+    },
+    "foundation/folder-structure-created": {
+      "at": 1792789662998,
+      "by": "Victor",
+      "done": true,
+      "updated": 1792789662998
+    },
+    "foundation/turborepo-monorepo": {
+      "at": 1792789662998,
+      "by": "Victor",
+      "done": true,
+      "updated": 1792789662998
+    },
+    "foundation/typescript-strict-eslint-prettier": {
+      "at": 1792789662998,
+      "by": "Victor",
+      "done": true,
+      "updated": 1792789662998
+    },
+    "foundation/envexample-with-names-only": {
+      "at": 1792789662998,
+      "by": "Victor",
+      "done": true,
+      "updated": 1792789662998
+    },
+    "foundation/lint-typecheck-and-build-pass": {
+      "at": 1792789662998,
+      "by": "Victor",
+      "done": true,
+      "updated": 1792789662998
+    },
+    "foundation/colour-spacing-radius-and-type-tokens": {
+      "at": 1792789662998,
+      "by": "Victor",
+      "done": true,
+      "updated": 1792789662998
+    },
+    "foundation/light-and-dark-themes": {
+      "at": 1792789662998,
+      "by": "Victor",
+      "done": true,
+      "updated": 1792789662998
+    },
+    "foundation/self-hosted-fonts-three-files-at-most": {
+      "at": 1792789662998,
+      "by": "Victor",
+      "done": true,
+      "updated": 1792789662998
+    },
+    "foundation/base-components": {
+      "at": 1792789662998,
+      "by": "Victor",
+      "done": true,
+      "updated": 1792789662998
+    },
+    "foundation/e-logo-svg-in-the-app": {
+      "at": 1792789662998,
+      "by": "Victor",
+      "done": true,
+      "updated": 1792789662998
+    },
+    "foundation/test-page-with-every-component-in-both-themes": {
+      "at": 1792789662998,
+      "by": "Victor",
+      "done": true,
+      "updated": 1792789662998
+    },
+    "foundation/tables": {
+      "at": 1792789662998,
+      "by": "Victor",
+      "done": true,
+      "updated": 1792789662998
+    },
+    "foundation/owner-only-row-level-security-on-every-table": {
+      "at": 1792789662998,
+      "by": "Victor",
+      "done": true,
+      "updated": 1792789662998
+    },
+    "foundation/private-storage-bucket-with-owner-only-policies": {
+      "at": 1792789662998,
+      "by": "Victor",
+      "done": true,
+      "updated": 1792789662998
+    },
+    "foundation/claim-next-job-function": {
+      "at": 1792789662998,
+      "by": "Victor",
+      "done": true,
+      "updated": 1792789662998
+    },
+    "foundation/profile-created-on-sign-up": {
+      "at": 1792789662998,
+      "by": "Victor",
+      "done": true,
+      "updated": 1792789662998
+    },
+    "foundation/upload-limits-enforced-by-the-database": {
+      "at": 1792789662998,
+      "by": "Victor",
+      "done": true,
+      "updated": 1792789662998
+    },
+    "foundation/security-check": {
+      "at": 1792789662998,
+      "by": "Victor",
+      "done": true,
+      "updated": 1792789662998
+    },
+    "foundation/environment-variables-documented": {
+      "at": 1792789662998,
+      "by": "Victor",
+      "done": true,
+      "updated": 1792789662998
+    },
+    "foundation/magic-link-with-pkce": {
+      "at": 1792789662998,
+      "by": "Victor",
+      "done": true,
+      "updated": 1792789662998
+    },
+    "foundation/resend-set-as-the-email-sender": {
+      "at": 1792789662998,
+      "by": "Victor",
+      "done": true,
+      "updated": 1792789662998
+    },
+    "foundation/redirect-urls-for-local-previews-and-production": {
+      "at": 1792789662998,
+      "by": "Victor",
+      "done": true,
+      "updated": 1792789662998
+    },
+    "foundation/proxyts-refreshes-the-session": {
+      "at": 1792789662998,
+      "by": "Victor",
+      "done": true,
+      "updated": 1792789662998
+    },
+    "foundation/signed-out-users-sent-to-sign-in": {
+      "at": 1792789662998,
+      "by": "Victor",
+      "done": true,
+      "updated": 1792789662998
+    },
+    "foundation/sign-in-page": {
+      "at": 1792789662998,
+      "by": "Victor",
+      "done": true,
+      "updated": 1792789662998
+    },
+    "foundation/check-your-email-page-with-resend": {
+      "at": 1792789662998,
+      "by": "Victor",
+      "done": true,
+      "updated": 1792789662998
+    },
+    "foundation/callback-route-to-home": {
+      "at": 1792789662998,
+      "by": "Victor",
+      "done": true,
+      "updated": 1792789662998
+    },
+    "foundation/error-states": {
+      "at": 1792789662998,
+      "by": "Victor",
+      "done": true,
+      "updated": 1792789662998
+    },
+    "foundation/sign-out": {
+      "at": 1792789662998,
+      "by": "Victor",
+      "done": true,
+      "updated": 1792789662998
+    },
+    "foundation/main-layout-with-header-logo-account-menu-theme": {
+      "at": 1792789662998,
+      "by": "Victor",
+      "done": true,
+      "updated": 1792789662998
+    },
+    "foundation/home-project-and-account-pages": {
+      "at": 1792789662998,
+      "by": "Victor",
+      "done": true,
+      "updated": 1792789662998
+    },
+    "foundation/works-on-phone-browsers": {
+      "at": 1792789662998,
+      "by": "Victor",
+      "done": true,
+      "updated": 1792789662998
+    },
+    "foundation/project-list-with-empty-state": {
+      "at": 1792789662998,
+      "by": "Victor",
+      "done": true,
+      "updated": 1792789662998
+    },
+    "foundation/new-project-button": {
+      "at": 1792789662998,
+      "by": "Victor",
+      "done": true,
+      "updated": 1792789662998
+    },
+    "foundation/create-project-api-route": {
+      "at": 1792789662998,
+      "by": "Victor",
+      "done": true,
+      "updated": 1792789662998
+    },
+    "foundation/upload-screen-plan-or-sketch-brief-up-to-5-references": {
+      "at": 1792789662998,
+      "by": "Victor",
+      "done": true,
+      "updated": 1792789662998
+    },
+    "foundation/vercel-functions-in-dublin-dub1": {
+      "at": 1792789662998,
+      "by": "Victor",
+      "done": true,
+      "updated": 1792789662998
+    },
+    "foundation/preview-link-on-every-pull-request": {
+      "at": 1792789662998,
+      "by": "Victor",
+      "done": true,
+      "updated": 1792789662998
+    },
+    "foundation/a-real-user-can-sign-in-and-create-a-project": {
+      "at": 1792789662998,
+      "by": "Victor",
+      "done": true,
+      "updated": 1792789662998
+    },
+    "ai-core/core-actions-are-api-routes-never-server-actions": {
+      "at": 1792789662998,
+      "by": "Victor",
+      "done": true,
+      "updated": 1792789662998
+    },
+    "ai-core/request-and-response-types-in-packagesshared": {
+      "at": 1792789662998,
+      "by": "Victor",
+      "done": true,
+      "updated": 1792789662998
+    },
+    "ai-core/modelprovider-interface": {
+      "at": 1792789662998,
+      "by": "Victor",
+      "done": true,
+      "updated": 1792789662998
+    },
+    "ai-core/anthropic-adapter": {
+      "at": 1792789662998,
+      "by": "Victor",
+      "done": true,
+      "updated": 1792789662998
+    },
+    "ai-core/openai-adapter": {
+      "at": 1792789662998,
+      "by": "Victor",
+      "done": true,
+      "updated": 1792789662998
+    },
+    "ai-core/every-call-records-model-tokens-cost-and-duration": {
+      "at": 1792789662998,
+      "by": "Victor",
+      "done": true,
+      "updated": 1792789662998
+    },
+    "ai-core/timeout-and-one-retry": {
+      "at": 1792789662998,
+      "by": "Victor",
+      "done": true,
+      "updated": 1792789662998
+    },
+    "ai-core/schema-written": {
+      "at": 1792789662998,
+      "by": "Victor",
+      "done": true,
+      "updated": 1792789662998
+    },
+    "ai-core/stable-id-on-every-element": {
+      "at": 1792789662998,
+      "by": "Victor",
+      "done": true,
+      "updated": 1792789662998
+    },
+    "ai-core/schema-version-field": {
+      "at": 1792789662998,
+      "by": "Victor",
+      "done": true,
+      "updated": 1792789662998
+    },
+    "ai-core/create-job-api-route": {
+      "at": 1792789662998,
+      "by": "Victor",
+      "done": true,
+      "updated": 1792789662998
+    },
+    "ai-core/worker-api-route": {
+      "at": 1792789662998,
+      "by": "Victor",
+      "done": true,
+      "updated": 1792789662998
+    },
+    "ai-core/worker-protected-by-a-secret": {
+      "at": 1792789662998,
+      "by": "Victor",
+      "done": true,
+      "updated": 1792789662998
+    },
+    "ai-core/stuck-jobs-recover-up-to-3-attempts": {
+      "at": 1792789662998,
+      "by": "Victor",
+      "done": true,
+      "updated": 1792789662998
+    },
+    "ai-core/progress-shown-while-jobs-run": {
+      "at": 1792789662998,
+      "by": "Victor",
+      "done": true,
+      "updated": 1792789662998
+    },
+    "ai-core/per-request-cost-limit": {
+      "at": 1792789662998,
+      "by": "Victor",
+      "done": true,
+      "updated": 1792789662998
+    },
+    "ai-core/clear-message-when-an-ai-call-fails": {
+      "at": 1792789662998,
+      "by": "Victor",
+      "done": true,
+      "updated": 1792789662998
+    },
+    "ai-core/fallback-when-a-model-is-down": {
+      "at": 1792789662998,
+      "by": "Victor",
+      "done": true,
+      "updated": 1792789662998
+    },
+    "product/delete-project-removes-files-and-rows": {
+      "at": 1792789662998,
+      "by": "Victor",
+      "done": true,
+      "updated": 1792789662998
+    },
+    "product/account-page-and-sign-out": {
+      "at": 1792789662998,
+      "by": "Victor",
+      "done": true,
+      "updated": 1792789662998
+    },
+    "product/home-list-with-thumbnails-and-dates": {
+      "at": 1792789662998,
+      "by": "Victor",
+      "done": true,
+      "updated": 1792789662998
+    },
+    "product/help-link-in-the-app": {
+      "at": 1792789662998,
+      "by": "Victor",
+      "done": true,
+      "updated": 1792789662998
+    },
+    "website/hero-content": {
+      "at": 1792789662998,
+      "by": "Victor",
+      "done": true,
+      "updated": 1792789662998
+    },
+    "website/primary-call-to-action": {
+      "at": 1792789662998,
+      "by": "Victor",
+      "done": true,
+      "updated": 1792789662998
+    },
+    "website/remove-the-old-orium-os-page": {
+      "at": 1792789662998,
+      "by": "Victor",
+      "done": true,
+      "updated": 1792789662998
+    },
+    "website/static-html-so-ai-crawlers-can-read-it": {
+      "at": 1792789662998,
+      "by": "Victor",
+      "done": true,
+      "updated": 1792789662998
+    },
+    "website/privacy-page": {
+      "at": 1792789662998,
+      "by": "Victor",
+      "done": true,
+      "updated": 1792789662998
+    },
+    "website/page-titles-and-descriptions": {
+      "at": 1792789662998,
+      "by": "Victor",
+      "done": true,
+      "updated": 1792789662998
+    },
+    "website/sitemapxml-and-robotstxt": {
+      "at": 1792789662998,
+      "by": "Victor",
+      "done": true,
+      "updated": 1792789662998
+    },
+    "website/google-search-console": {
+      "at": 1792789662998,
+      "by": "Victor",
+      "done": true,
+      "updated": 1792789662998
+    },
+    "hardening/custom-domain-through-cloudflare": {
+      "at": 1792789662998,
+      "by": "Victor",
+      "done": true,
+      "updated": 1792789662998
+    },
+    "hardening/per-user-daily-workflow-limit-in-the-database": {
+      "at": 1792789662998,
+      "by": "Victor",
+      "done": true,
+      "updated": 1792789662998
+    },
+    "hardening/google-sign-in": {
+      "at": 1792789662998,
+      "by": "Victor",
+      "done": true,
+      "updated": 1792789662998
+    },
+    "trust/consent-at-sign-up": {
+      "at": 1792789662998,
+      "by": "Victor",
+      "done": true,
+      "updated": 1792789662998
+    },
+    "trust/not-for-construction-notice": {
+      "at": 1792789662998,
+      "by": "Victor",
+      "done": true,
+      "updated": 1792789662998
+    },
+    "launch/support-email-address": {
+      "at": 1792789662998,
+      "by": "Victor",
+      "done": true,
+      "updated": 1792789662998
     }
   },
   "version": 2
