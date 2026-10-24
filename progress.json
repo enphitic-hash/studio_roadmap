@@ -733,6 +733,13 @@
       "by": "Victor",
       "done": true,
       "updated": 1792789662998
+    },
+    "foundation/branch-protection-on-main": {
+      "at": 1792821420000,
+      "by": "Victor",
+      "done": false,
+      "updated": 1792821420000,
+      "note": "Ruleset protect-main created 24 Oct (PR required, check must pass, up to date, no force push). Not enforced: private repo needs a GitHub Team organization. Tick once upgraded."
     }
   },
   "version": 2
