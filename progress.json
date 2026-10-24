@@ -746,6 +746,345 @@
       "by": "Victor",
       "done": true,
       "updated": 1792789662998
+    },
+    "foundation/test-accounts-for-trevor-and-victor-in-dev": {
+      "at": 1792869360000,
+      "by": "Victor",
+      "done": true,
+      "updated": 1792869360000,
+      "note": "Both accounts exist in enphitic-dev"
+    },
+    "foundation/upload-api-route": {
+      "at": 1792869360000,
+      "by": "Victor",
+      "done": true,
+      "updated": 1792869360000,
+      "note": "POST /api/spaces issues private upload paths"
+    },
+    "foundation/upload-rights-notice": {
+      "at": 1792869360000,
+      "by": "Victor",
+      "done": true,
+      "updated": 1792869360000,
+      "note": "\"Only upload plans and images you have the right to use.\""
+    },
+    "ai-core/lint-rule-blocking-ai-sdks-outside-packagesai": {
+      "at": 1792869360000,
+      "by": "Victor",
+      "done": true,
+      "updated": 1792869360000,
+      "note": "ESLint no-restricted-imports in apps/web"
+    },
+    "ai-core/worker-triggered-after-each-job-cron-as-backup": {
+      "at": 1792869360000,
+      "by": "Victor",
+      "done": true,
+      "updated": 1792869360000,
+      "note": "In-process after() + kick route; daily cron backup (PR #28)"
+    },
+    "ai-core/function-time-limit-fits-image-jobs": {
+      "at": 1792869360000,
+      "by": "Victor",
+      "done": true,
+      "updated": 1792869360000,
+      "note": "maxDuration 300 with Fluid Compute"
+    },
+    "ai-core/extraction-prompt": {
+      "at": 1792869360000,
+      "by": "Victor",
+      "done": true,
+      "updated": 1792869360000,
+      "note": "Plan read (Phase 5)"
+    },
+    "ai-core/validate-retry-once-then-ask-the-user": {
+      "at": 1792869360000,
+      "by": "Victor",
+      "done": true,
+      "updated": 1792869360000,
+      "note": "Validate, retry once, then plan review asks the user (Phase 5)"
+    },
+    "ai-core/saved-as-version-1": {
+      "at": 1792869360000,
+      "by": "Victor",
+      "done": true,
+      "updated": 1792869360000
+    },
+    "ai-core/flags-for-anything-uncertain": {
+      "at": 1792869360000,
+      "by": "Victor",
+      "done": true,
+      "updated": 1792869360000
+    },
+    "ai-core/prompts-stored-with-version-numbers": {
+      "at": 1792869360000,
+      "by": "Victor",
+      "done": true,
+      "updated": 1792869360000,
+      "note": "PROMPT_VERSION on every output"
+    },
+    "product/plan-image-beside-the-context": {
+      "at": 1792869360000,
+      "by": "Victor",
+      "done": true,
+      "updated": 1792869360000,
+      "note": "Plan review screen (Phase 5)"
+    },
+    "product/edit-spaces": {
+      "at": 1792869360000,
+      "by": "Victor",
+      "done": true,
+      "updated": 1792869360000
+    },
+    "product/constraints-intent-style-tags-reference-roles": {
+      "at": 1792869360000,
+      "by": "Victor",
+      "done": true,
+      "updated": 1792869360000
+    },
+    "product/view-plan-editor": {
+      "at": 1792869360000,
+      "by": "Victor",
+      "done": true,
+      "updated": 1792869360000,
+      "note": "Views panel (Phase 5)"
+    },
+    "product/flags-to-confirm-or-fix": {
+      "at": 1792869360000,
+      "by": "Victor",
+      "done": true,
+      "updated": 1792869360000
+    },
+    "product/saving-creates-a-new-version": {
+      "at": 1792869360000,
+      "by": "Victor",
+      "done": true,
+      "updated": 1792869360000
+    },
+    "product/generate-button-waits-for-flags": {
+      "at": 1792869360000,
+      "by": "Victor",
+      "done": true,
+      "updated": 1792869360000,
+      "note": "Plan review before any image (Phase 5)"
+    },
+    "product/prompt-builder-in-plain-testable-code": {
+      "at": 1792869360000,
+      "by": "Victor",
+      "done": true,
+      "updated": 1792869360000
+    },
+    "product/2-to-3-style-directions-on-the-same-view-plan": {
+      "at": 1792869360000,
+      "by": "Victor",
+      "done": true,
+      "updated": 1792869360000
+    },
+    "product/image-size-pinned": {
+      "at": 1792869360000,
+      "by": "Victor",
+      "done": true,
+      "updated": 1792869360000,
+      "note": "1536x1024"
+    },
+    "product/images-saved-with-full-provenance": {
+      "at": 1792869360000,
+      "by": "Victor",
+      "done": true,
+      "updated": 1792869360000
+    },
+    "product/only-failed-images-retried": {
+      "at": 1792869360000,
+      "by": "Victor",
+      "done": true,
+      "updated": 1792869360000,
+      "note": "Retry this view; failed runs are free (PR #47)"
+    },
+    "product/grid-concepts-as-columns-views-as-rows": {
+      "at": 1792869360000,
+      "by": "Victor",
+      "done": true,
+      "updated": 1792869360000,
+      "note": "Built per screens v2 (rows are concepts)"
+    },
+    "product/images-appear-as-each-finishes": {
+      "at": 1792869360000,
+      "by": "Victor",
+      "done": true,
+      "updated": 1792869360000
+    },
+    "product/full-screen-viewer": {
+      "at": 1792869360000,
+      "by": "Victor",
+      "done": true,
+      "updated": 1792869360000
+    },
+    "product/select-a-concept": {
+      "at": 1792869360000,
+      "by": "Victor",
+      "done": true,
+      "updated": 1792869360000
+    },
+    "product/revision-api-route": {
+      "at": 1792869360000,
+      "by": "Victor",
+      "done": true,
+      "updated": 1792869360000,
+      "note": "PR #30"
+    },
+    "product/image-edit-with-size-pinned": {
+      "at": 1792869360000,
+      "by": "Victor",
+      "done": true,
+      "updated": 1792869360000,
+      "note": "PR #30"
+    },
+    "product/mask-composite-with-sharp": {
+      "at": 1792869360000,
+      "by": "Victor",
+      "done": true,
+      "updated": 1792869360000,
+      "note": "Revision Lock, PR #30"
+    },
+    "product/untouched-views-reused": {
+      "at": 1792869360000,
+      "by": "Victor",
+      "done": true,
+      "updated": 1792869360000,
+      "note": "PR #30"
+    },
+    "product/new-version-with-a-change-summary": {
+      "at": 1792869360000,
+      "by": "Victor",
+      "done": true,
+      "updated": 1792869360000,
+      "note": "PR #30"
+    },
+    "product/automated-check-0-pixels-changed-outside-the-mask": {
+      "at": 1792869360000,
+      "by": "Victor",
+      "done": true,
+      "updated": 1792869360000,
+      "note": "Decoded re-check, never saved on a leak (PR #30)"
+    },
+    "product/brush-tool-with-size-eraser-clear": {
+      "at": 1792869360000,
+      "by": "Victor",
+      "done": true,
+      "updated": 1792869360000
+    },
+    "product/mask-exported-at-the-exact-image-size": {
+      "at": 1792869360000,
+      "by": "Victor",
+      "done": true,
+      "updated": 1792869360000
+    },
+    "product/request-box-with-examples": {
+      "at": 1792869360000,
+      "by": "Victor",
+      "done": true,
+      "updated": 1792869360000
+    },
+    "product/conflict-warning-never-a-refusal": {
+      "at": 1792869360000,
+      "by": "Victor",
+      "done": true,
+      "updated": 1792869360000
+    },
+    "product/before-and-after-slider": {
+      "at": 1792869360000,
+      "by": "Victor",
+      "done": true,
+      "updated": 1792869360000,
+      "note": "Phase 7"
+    },
+    "product/version-timeline-with-summaries-and-thumbnails": {
+      "at": 1792869360000,
+      "by": "Victor",
+      "done": true,
+      "updated": 1792869360000,
+      "note": "Phase 7"
+    },
+    "product/restore-creates-a-new-version": {
+      "at": 1792869360000,
+      "by": "Victor",
+      "done": true,
+      "updated": 1792869360000,
+      "note": "Phase 7"
+    },
+    "product/ai-generated-badge-on-images": {
+      "at": 1792869360000,
+      "by": "Victor",
+      "done": true,
+      "updated": 1792869360000
+    },
+    "product/first-run-welcome-explaining-the-workflow": {
+      "at": 1792869360000,
+      "by": "Victor",
+      "done": true,
+      "updated": 1792869360000,
+      "note": "First-time Studio screen (Phase 8); the separate welcome flow was removed"
+    },
+    "product/example-briefs-and-revision-requests": {
+      "at": 1792869360000,
+      "by": "Victor",
+      "done": true,
+      "updated": 1792869360000,
+      "note": "Front-door suggestions"
+    },
+    "trust/ai-generated-label-on-outputs": {
+      "at": 1792869360000,
+      "by": "Victor",
+      "done": true,
+      "updated": 1792869360000
+    },
+    "v1-testing/lint-typecheck-and-build-pass": {
+      "at": 1792869360000,
+      "by": "Victor",
+      "done": true,
+      "updated": 1792869360000,
+      "note": "CI green on main"
+    },
+    "product/sample-project": {
+      "by": "Victor",
+      "done": false,
+      "updated": 1792869360000,
+      "note": "Dropped 24 Oct: no fake sample space"
+    },
+    "trust/account-deletion-removes-rows-and-files": {
+      "by": "Victor",
+      "done": false,
+      "updated": 1792869360000,
+      "note": "Built in Phase 9; tested with fakes only, needs one real run"
+    },
+    "product/openai-funded-and-key-set-in-vercel": {
+      "by": "Victor",
+      "done": false,
+      "updated": 1792869360000,
+      "note": "Waiting: no model credit yet"
+    },
+    "ai-core/tested-on-5-inputs": {
+      "by": "Victor",
+      "done": false,
+      "updated": 1792869360000,
+      "note": "Needs model credit (docs/needs-a-real-run.md)"
+    },
+    "product/cost-under-150-per-workflow": {
+      "by": "Victor",
+      "done": false,
+      "updated": 1792869360000,
+      "note": "Needs model credit to measure"
+    },
+    "product/concepts-arrive-in-under-3-minutes": {
+      "by": "Victor",
+      "done": false,
+      "updated": 1792869360000,
+      "note": "Needs model credit to measure"
+    },
+    "foundation/applied-to-dev-then-prod-after-review": {
+      "by": "Victor",
+      "done": false,
+      "updated": 1792869360000,
+      "note": "All 16 migrations on dev (24 Oct); no prod project yet"
     }
   },
   "version": 2
