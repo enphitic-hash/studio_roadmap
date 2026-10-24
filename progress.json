@@ -430,10 +430,10 @@
       "updated": 1792789662998
     },
     "foundation/claudemd-agentsmd-readmemd-designmd-filled": {
-      "at": 1792827548710,
-      "by": "Victor",
-      "done": true,
-      "updated": 1792827548710
+      "at": null,
+      "by": null,
+      "done": false,
+      "updated": 1792827563756
     },
     "foundation/colour-spacing-radius-and-type-tokens": {
       "at": 1792789662998,
