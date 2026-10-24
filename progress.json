@@ -1085,6 +1085,38 @@
       "done": false,
       "updated": 1792869360000,
       "note": "All 16 migrations on dev (24 Oct); no prod project yet"
+    },
+    "foundation/project-page-shows-inputs-through-signed-urls": {
+      "at": 1792879800000,
+      "by": "Victor",
+      "done": true,
+      "updated": 1792879800000,
+      "note": "Seen live 25 Oct: plan thumbnail in the Space Context panel"
+    },
+    "product/hints-on-the-project-context-panel": {
+      "at": 1792879800000,
+      "by": "Victor",
+      "done": true,
+      "updated": 1792879800000,
+      "note": "Seen live 25 Oct: \"Studio fills this in…\" and the WAITING FOR list"
+    },
+    "foundation/loading-and-error-pages": {
+      "by": "Victor",
+      "done": false,
+      "updated": 1792879800000,
+      "note": "Checked 25 Oct: no error.tsx / not-found.tsx on main yet"
+    },
+    "product/report-a-problem-link": {
+      "by": "Victor",
+      "done": false,
+      "updated": 1792879800000,
+      "note": "Checked 25 Oct: not built yet"
+    },
+    "v1-testing/every-screen-follows-designmd": {
+      "by": "Victor",
+      "done": false,
+      "updated": 1792879800000,
+      "note": "Audit 25 Oct: built to screens v2 + studio-prompt; real-model runs still missing"
     }
   },
   "version": 2
